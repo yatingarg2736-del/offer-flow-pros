@@ -1,7 +1,7 @@
 const brands = [
   "Amazon", "Flipkart", "Myntra", "Ajio", "Nykaa", "Tata CLiQ", "Croma", "Reliance Digital",
-  "MakeMyTrip", "Booking.com", "Yatra", "Goibibo", "Agoda", "EaseMyTrip", "IRCTC", "Zoomcar",
-  "Swiggy", "Zomato", "BigBasket", "FirstCry", "boAt", "Lenskart", "Pharmeasy", "Mamaearth",
+  "boAt", "Noise", "Lenskart", "Vijay Sales", "Apple", "Samsung", "OnePlus", "Mi",
+  "Swiggy", "Zomato", "BigBasket", "FirstCry", "Pharmeasy", "Mamaearth", "Meesho", "Snapdeal",
 ];
 
 const Row = ({ reverse = false }: { reverse?: boolean }) => (
