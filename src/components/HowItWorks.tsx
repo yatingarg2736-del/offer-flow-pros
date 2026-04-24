@@ -10,7 +10,7 @@ const HowItWorks = () => (
   <section id="how" className="bg-secondary/40 py-20">
     <div className="container">
       <div className="mb-14 flex flex-col items-center text-center">
-        <span className="text-xs font-bold uppercase tracking-widest text-accent">How DealMint Works</span>
+        <span className="text-xs font-bold uppercase tracking-widest text-accent">How CouponMinty Works</span>
         <h2 className="mt-3 text-3xl font-extrabold text-primary md:text-4xl">Three steps to real savings</h2>
       </div>
       <div className="grid gap-8 md:grid-cols-3">

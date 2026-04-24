@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 const posts = [
   {
     title: "Top 10 Cashback Hacks for Festive Season Shopping",
-    excerpt: "Stack coupons, bank offers and DealMint cashback to save up to 40% on every order this Diwali.",
+    excerpt: "Stack coupons, bank offers and CouponMinty cashback to save up to 40% on every order this Diwali.",
     author: "Priya Sharma",
     date: "Apr 18, 2026",
     read: "6 min",
@@ -24,7 +24,7 @@ const posts = [
   },
   {
     title: "How Affiliate Marketing Actually Pays You Real Money",
-    excerpt: "An honest breakdown of how DealMint earns commission and shares it back with you — no hidden catches.",
+    excerpt: "An honest breakdown of how CouponMinty earns commission and shares it back with you — no hidden catches.",
     author: "Ananya Iyer",
     date: "Apr 05, 2026",
     read: "5 min",
@@ -32,14 +32,14 @@ const posts = [
   },
   {
     title: "Best Laptops Under ₹60,000 with Cashback in 2026",
-    excerpt: "Hand-picked laptops for students, creators and gamers with the highest stacked savings on DealMint.",
+    excerpt: "Hand-picked laptops for students, creators and gamers with the highest stacked savings on CouponMinty.",
     author: "Karan Mehta",
     date: "Mar 29, 2026",
     read: "7 min",
     tag: "Tech",
   },
   {
-    title: "Becoming a DealMint Publisher: A Beginner's Guide",
+    title: "Becoming a CouponMinty Publisher: A Beginner's Guide",
     excerpt: "Earn from your blog, Telegram channel or YouTube — here's exactly how to start and scale your earnings.",
     author: "Neha Kapoor",
     date: "Mar 22, 2026",
@@ -48,7 +48,7 @@ const posts = [
   },
   {
     title: "Smartwatch Wars 2026: Noise vs boAt vs Apple",
-    excerpt: "We compare features, battery and after-sales — plus the cashback you get on each through DealMint.",
+    excerpt: "We compare features, battery and after-sales — plus the cashback you get on each through CouponMinty.",
     author: "Aditya Rao",
     date: "Mar 15, 2026",
     read: "6 min",
@@ -64,7 +64,7 @@ const Blog = () => (
       <div className="absolute inset-0 bg-radial-glow" />
       <div className="container relative py-20 lg:py-24">
         <span className="inline-flex w-fit items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider backdrop-blur">
-          DealMint Blog
+          CouponMinty Blog
         </span>
         <h1 className="mt-6 max-w-3xl text-balance text-4xl font-extrabold leading-[1.05] sm:text-5xl lg:text-6xl">
           Smart savings, real <span className="text-accent">money tips</span> & tech buying guides.

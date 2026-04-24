@@ -18,7 +18,7 @@ const Travel = () => (
         <span className="text-xs font-bold uppercase tracking-widest text-accent">E-commerce & Tech</span>
         <h2 className="mt-3 text-3xl font-extrabold text-primary md:text-4xl">Save big on gadgets, electronics & tech</h2>
       </div>
-      <p className="text-muted-foreground md:text-right">Official partner with leading e-commerce and tech brands. Shop through DealMint and earn extra cashback on every gadget.</p>
+      <p className="text-muted-foreground md:text-right">Official partner with leading e-commerce and tech brands. Shop through CouponMinty and earn extra cashback on every gadget.</p>
     </div>
 
     <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
