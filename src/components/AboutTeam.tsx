@@ -15,7 +15,7 @@ const AboutTeam = () => (
         <div className="absolute -inset-4 rounded-3xl bg-accent/15 blur-2xl" />
         <img
           src={team}
-          alt="DealMint partnerships team"
+          alt="CouponMinty partnerships team"
           width={1536}
           height={1024}
           loading="lazy"
@@ -23,10 +23,10 @@ const AboutTeam = () => (
         />
       </div>
       <div>
-        <span className="text-xs font-bold uppercase tracking-widest text-accent">About DealMint</span>
+        <span className="text-xs font-bold uppercase tracking-widest text-accent">About CouponMinty</span>
         <h2 className="mt-3 text-3xl font-extrabold text-primary md:text-4xl">A passionate team building India&apos;s largest savings network</h2>
         <p className="mt-4 text-muted-foreground">
-          Founded in 2017, DealMint is now a trusted partner to 1,500+ merchants and serves over 25 million members. Our 200+ specialists in tech, partnerships and customer success work round-the-clock so you save more on every purchase.
+          Founded in 2017, CouponMinty is now a trusted partner to 1,500+ merchants and serves over 25 million members. Our 200+ specialists in tech, partnerships and customer success work round-the-clock so you save more on every purchase.
         </p>
         <div className="mt-8 grid gap-4 sm:grid-cols-2">
           {points.map((p) => (

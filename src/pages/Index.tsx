@@ -14,7 +14,7 @@ const Index = () => {
   return (
     <main className="min-h-screen bg-background">
       <Navbar />
-      <h1 className="sr-only">DealMint — Coupons, Cashback & Travel Deals</h1>
+      <h1 className="sr-only">CouponMinty — Coupons, Cashback & Travel Deals</h1>
       <Hero />
       <Stats />
       <Stores />

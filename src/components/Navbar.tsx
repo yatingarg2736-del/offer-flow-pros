@@ -18,7 +18,7 @@ const Navbar = () => (
           <Sparkles className="h-5 w-5 text-accent-foreground" />
         </span>
         <span className="text-xl font-extrabold tracking-tight text-primary">
-          Deal<span className="text-accent">Mint</span>
+          Coupon<span className="text-accent">Minty</span>
         </span>
       </a>
       <nav className="hidden items-center gap-7 md:flex">

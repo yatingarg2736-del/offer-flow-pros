@@ -14,7 +14,7 @@ const Hero = () => (
           Extra Cashback on top of <span className="text-accent">every coupon</span> you use.
         </h1>
         <p className="mt-5 max-w-xl text-lg text-white/75">
-          DealMint partners with 1,500+ leading brands across shopping, travel, fashion and food — so you save more, every single order.
+          CouponMinty partners with 1,500+ leading brands across shopping, travel, fashion and food — so you save more, every single order.
         </p>
 
         <div className="mt-8 flex max-w-xl items-center gap-2 rounded-2xl bg-white p-2 shadow-elegant">
@@ -41,7 +41,7 @@ const Hero = () => (
         <div className="absolute -inset-6 rounded-[2rem] bg-accent/20 blur-3xl" />
         <img
           src={hero}
-          alt="DealMint cashback and coupons"
+          alt="CouponMinty cashback and coupons"
           width={1536}
           height={1024}
           className="relative animate-float rounded-3xl shadow-elegant"
