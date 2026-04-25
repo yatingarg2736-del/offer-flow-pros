@@ -32,10 +32,12 @@ const Navbar = () => {
           ))}
         </nav>
         <div className="flex items-center gap-3">
-          <Button variant="ghost" className="hidden sm:inline-flex">Sign in</Button>
-          <Button asChild className="bg-accent-gradient text-accent-foreground hover:opacity-90">
-            <a href="#contact">Join Free</a>
-          </Button>
+          <a href="/#contact" className="hidden sm:inline-flex items-center px-4 py-2 rounded-md text-sm font-medium text-primary hover:bg-secondary">
+            Sign in
+          </a>
+          <a href="/#contact" className="inline-flex items-center px-4 py-2 rounded-md text-sm font-medium bg-accent-gradient text-accent-foreground hover:opacity-90">
+            Join Free
+          </a>
           <button className="md:hidden p-2 rounded-md hover:bg-secondary" onClick={() => setOpen(!open)}>
             {open ? <X className="h-5 w-5 text-primary" /> : <Menu className="h-5 w-5 text-primary" />}
           </button>
@@ -44,15 +46,30 @@ const Navbar = () => {
       {open && (
         <div className="md:hidden border-t border-border/60 bg-background px-6 py-4 flex flex-col">
           {links.map((l) => (
-            <a key={l.label} href={l.href} onClick={() => setOpen(false)} className="text-sm font-medium text-muted-foreground hover:text-primary py-3 border-b border-border/30 last:border-0">
+            
+              key={l.label}
+              href={l.href}
+              onClick={() => setOpen(false)}
+              className="text-sm font-medium text-muted-foreground hover:text-primary py-3 border-b border-border/30 last:border-0"
+            >
               {l.label}
             </a>
           ))}
           <div className="mt-4 flex flex-col gap-2">
-            <Button variant="outline" className="w-full">Sign in</Button>
-            <Button asChild className="w-full bg-accent-gradient text-accent-foreground hover:opacity-90">
-              <a href="#contact">Join Free</a>
-            </Button>
+            
+              href="/#contact"
+              onClick={() => setOpen(false)}
+              className="w-full text-center py-2 px-4 rounded-md border border-border text-primary font-medium hover:bg-secondary"
+            >
+              Sign in
+            </a>
+            
+              href="/#contact"
+              onClick={() => setOpen(false)}
+              className="w-full text-center py-2 px-4 rounded-md bg-accent-gradient text-accent-foreground font-medium hover:opacity-90"
+            >
+              Join Free
+            </a>
           </div>
         </div>
       )}
