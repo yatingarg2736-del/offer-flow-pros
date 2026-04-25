@@ -48,6 +48,11 @@ const ContactForms = () => {
       setErrors(errs);
       return;
     }
+    await fetch("https://formspree.io/f/meevdjez", {
+  method: "POST",
+  headers: {"Content-Type": "application/json"},
+  body: JSON.stringify(data)
+});
     setErrors({});
     toast({
       title: tab === "advertiser" ? "Partnership request received!" : "Publisher application received!",
