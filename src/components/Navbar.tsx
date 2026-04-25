@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { Button } from "@/components/ui/button";
 import { Sparkles, Menu, X } from "lucide-react";
 
 const links = [
@@ -16,7 +15,7 @@ const Navbar = () => {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/60 bg-background/80 backdrop-blur-xl">
       <div className="container flex h-16 items-center justify-between">
-        <a href="#" className="flex items-center gap-2">
+        <a href="/" className="flex items-center gap-2">
           <span className="grid h-9 w-9 place-items-center rounded-xl bg-accent-gradient shadow-glow">
             <Sparkles className="h-5 w-5 text-accent-foreground" />
           </span>
@@ -46,28 +45,15 @@ const Navbar = () => {
       {open && (
         <div className="md:hidden border-t border-border/60 bg-background px-6 py-4 flex flex-col">
           {links.map((l) => (
-            
-              key={l.label}
-              href={l.href}
-              onClick={() => setOpen(false)}
-              className="text-sm font-medium text-muted-foreground hover:text-primary py-3 border-b border-border/30 last:border-0"
-            >
+            <a key={l.label} href={l.href} onClick={() => setOpen(false)} className="text-sm font-medium text-muted-foreground hover:text-primary py-3 border-b border-border/30 last:border-0">
               {l.label}
             </a>
           ))}
           <div className="mt-4 flex flex-col gap-2">
-            
-              href="/#contact"
-              onClick={() => setOpen(false)}
-              className="w-full text-center py-2 px-4 rounded-md border border-border text-primary font-medium hover:bg-secondary"
-            >
+            <a href="/#contact" onClick={() => setOpen(false)} className="w-full text-center py-2 px-4 rounded-md border border-border text-primary font-medium hover:bg-secondary">
               Sign in
             </a>
-            
-              href="/#contact"
-              onClick={() => setOpen(false)}
-              className="w-full text-center py-2 px-4 rounded-md bg-accent-gradient text-accent-foreground font-medium hover:opacity-90"
-            >
+            <a href="/#contact" onClick={() => setOpen(false)} className="w-full text-center py-2 px-4 rounded-md bg-accent-gradient text-accent-foreground font-medium hover:opacity-90">
               Join Free
             </a>
           </div>
