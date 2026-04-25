@@ -11,7 +11,7 @@ const advertiserSchema = z.object({
   company: z.string().trim().min(2, "Company name required").max(100),
   name: z.string().trim().min(2, "Name required").max(80),
   email: z.string().trim().email("Invalid email").max(255),
-  website: z.string().trim().url("Enter a valid URL").max(255),
+  website: z.string().trim().min(3, "Website required").max(255),
   message: z.string().trim().max(1000).optional(),
 });
 
@@ -39,7 +39,8 @@ const ContactForms = () => {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const data = Object.fromEntries(new FormData(e.currentTarget));
+    const formData = new FormData(e.currentTarget);
+    const data = Object.fromEntries(formData);
     const schema = tab === "advertiser" ? advertiserSchema : publisherSchema;
     const result = schema.safeParse(data);
     if (!result.success) {
@@ -48,17 +49,23 @@ const ContactForms = () => {
       setErrors(errs);
       return;
     }
-    await fetch("https://formspree.io/f/meevdjez", {
-  method: "POST",
-  headers: {"Content-Type": "application/json"},
-  body: JSON.stringify(data)
-});
-    setErrors({});
-    toast({
-      title: tab === "advertiser" ? "Partnership request received!" : "Publisher application received!",
-      description: "Our team will reach out within 1 business day.",
-    });
-    (e.target as HTMLFormElement).reset();
+    try {
+      const response = await fetch("https://formspree.io/f/meevdjez", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...data, form_type: tab }),
+      });
+      if (response.ok) {
+        setErrors({});
+        toast({
+          title: tab === "advertiser" ? "Partnership request received!" : "Publisher application received!",
+          description: "Our team will reach out within 1 business day.",
+        });
+        (e.target as HTMLFormElement).reset();
+      }
+    } catch (err) {
+      toast({ title: "Something went wrong. Please try again." });
+    }
   };
 
   return (
@@ -69,7 +76,6 @@ const ContactForms = () => {
           <h2 className="mt-3 text-3xl font-extrabold md:text-4xl">Grow with CouponMinty</h2>
           <p className="mt-3 text-white/75">Whether you&apos;re a brand looking for performance marketing or a creator monetising your audience, let&apos;s talk.</p>
         </div>
-
         <div className="mx-auto max-w-3xl rounded-3xl bg-card p-2 shadow-elegant">
           <div className="grid grid-cols-2 gap-1 rounded-2xl bg-secondary p-1">
             {([
@@ -88,17 +94,16 @@ const ContactForms = () => {
               </button>
             ))}
           </div>
-
           <form onSubmit={handleSubmit} className="grid gap-4 p-6 sm:p-8 md:grid-cols-2">
             {tab === "advertiser" ? (
               <>
                 <Field id="company" label="Company name" error={errors.company}><Input className="text-gray-900" id="company" name="company" maxLength={100} placeholder="Acme Pvt Ltd" /></Field>
                 <Field id="name" label="Your name" error={errors.name}><Input className="text-gray-900" id="name" name="name" maxLength={80} placeholder="Priya Sharma" /></Field>
                 <Field id="email" label="Work email" error={errors.email}><Input className="text-gray-900" id="email" name="email" type="email" maxLength={255} placeholder="priya@acme.com" /></Field>
-                <Field id="website" label="Website" error={errors.website}><Input className="text-gray-900" id="website" name="website" maxLength={255} placeholder="https://acme.com" /></Field>
+                <Field id="website" label="Website" error={errors.website}><Input className="text-gray-900" id="website" name="website" maxLength={255} placeholder="thrillophilia.com" /></Field>
                 <div className="md:col-span-2">
                   <Field id="message" label="Tell us about your goals" error={errors.message}>
-                    <Textarea id="message" name="message" maxLength={1000} placeholder="Categories, regions, monthly budget…" rows={4} />
+                    <Textarea className="text-gray-900" id="message" name="message" maxLength={1000} placeholder="Categories, regions, monthly budget…" rows={4} />
                   </Field>
                 </div>
               </>
@@ -110,7 +115,7 @@ const ContactForms = () => {
                 <Field id="audience" label="Audience size" error={errors.audience}><Input className="text-gray-900" id="audience" name="audience" maxLength={40} placeholder="e.g. 250K followers" /></Field>
                 <div className="md:col-span-2">
                   <Field id="message" label="About your audience" error={errors.message}>
-                    <Textarea id="message" name="message" maxLength={1000} placeholder="Niche, geography, content type…" rows={4} />
+                    <Textarea className="text-gray-900" id="message" name="message" maxLength={1000} placeholder="Niche, geography, content type…" rows={4} />
                   </Field>
                 </div>
               </>
