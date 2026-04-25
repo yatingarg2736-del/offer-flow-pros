@@ -47,7 +47,7 @@ const BlogPost = () => {
         title={`${post.title} | CouponMinty Blog`}
         description={post.excerpt}
         canonical={`https://couponminty.com/blog/${post.slug}`}
-        ogImage={post.image}
+        image={post.image}
         jsonLd={{
           "@context": "https://schema.org",
           "@type": "BlogPosting",
