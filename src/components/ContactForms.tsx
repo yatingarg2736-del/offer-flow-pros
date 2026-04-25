@@ -37,7 +37,7 @@ const ContactForms = () => {
   const [tab, setTab] = useState<Tab>("advertiser");
   const [errors, setErrors] = useState<Record<string, string>>({});
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const data = Object.fromEntries(new FormData(e.currentTarget));
     const schema = tab === "advertiser" ? advertiserSchema : publisherSchema;
