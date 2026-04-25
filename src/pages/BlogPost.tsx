@@ -1,0 +1,180 @@
+import { Link, useParams } from "react-router-dom";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { ArrowLeft, ArrowRight, Calendar, Clock, User } from "lucide-react";
+import { blogPosts, getPostBySlug } from "@/lib/blogPosts";
+import { withUtm } from "@/lib/affiliate";
+
+const logoFor = (url: string) => {
+  try {
+    const domain = new URL(url).hostname.replace(/^www\./, "");
+    return `https://www.google.com/s2/favicons?sz=64&domain=${domain}`;
+  } catch {
+    return "";
+  }
+};
+
+const BlogPost = () => {
+  const { slug = "" } = useParams();
+  const post = getPostBySlug(slug);
+
+  if (!post) {
+    return (
+      <main className="min-h-screen bg-background">
+        <Navbar />
+        <section className="container py-24 text-center">
+          <h1 className="text-3xl font-extrabold text-primary">Article not found</h1>
+          <p className="mt-3 text-muted-foreground">The post you are looking for does not exist or has been moved.</p>
+          <Button asChild className="mt-6 bg-accent-gradient text-accent-foreground hover:opacity-90">
+            <Link to="/blog">Back to Blog</Link>
+          </Button>
+        </section>
+        <Footer />
+      </main>
+    );
+  }
+
+  const related = blogPosts.filter((p) => p.slug !== post.slug && p.tag === post.tag).slice(0, 3);
+  const fallback = blogPosts.filter((p) => p.slug !== post.slug).slice(0, 3);
+  const recommended = related.length > 0 ? related : fallback;
+
+  return (
+    <main className="min-h-screen bg-background">
+      <SEO
+        title={`${post.title} | CouponMinty Blog`}
+        description={post.excerpt}
+        canonical={`https://couponminty.com/blog/${post.slug}`}
+        ogImage={post.image}
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "BlogPosting",
+          headline: post.title,
+          description: post.excerpt,
+          image: post.image,
+          author: { "@type": "Person", name: post.author },
+          datePublished: post.date,
+          articleSection: post.tag,
+          mainEntityOfPage: `https://couponminty.com/blog/${post.slug}`,
+        }}
+      />
+      <Navbar />
+
+      {/* HERO */}
+      <section className="bg-secondary/40">
+        <div className="container py-12 lg:py-16">
+          <Link to="/blog" className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-accent">
+            <ArrowLeft className="h-4 w-4" /> All articles
+          </Link>
+          <span className="mt-6 inline-block rounded-full bg-accent px-3 py-1 text-xs font-bold uppercase tracking-wider text-accent-foreground">
+            {post.tag}
+          </span>
+          <h1 className="mt-4 max-w-4xl text-3xl font-extrabold leading-tight text-primary md:text-4xl lg:text-5xl">
+            {post.title}
+          </h1>
+          <div className="mt-5 flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
+            <span className="inline-flex items-center gap-1.5"><User className="h-4 w-4" /> {post.author}</span>
+            <span className="inline-flex items-center gap-1.5"><Calendar className="h-4 w-4" /> {post.date}</span>
+            <span className="inline-flex items-center gap-1.5"><Clock className="h-4 w-4" /> {post.read}</span>
+          </div>
+        </div>
+      </section>
+
+      {/* HERO IMAGE */}
+      <section className="container -mt-2 py-8">
+        <div className="overflow-hidden rounded-3xl border border-border bg-secondary shadow-elegant">
+          <img
+            src={post.image}
+            alt={post.title}
+            width={1200}
+            height={675}
+            className="h-auto w-full object-contain"
+          />
+        </div>
+      </section>
+
+      {/* CONTENT */}
+      <article className="container max-w-3xl pb-12">
+        <p className="text-lg font-medium leading-relaxed text-foreground/90">{post.excerpt}</p>
+        <div className="mt-8 space-y-5 text-base leading-relaxed text-foreground/85">
+          {post.content.map((para, i) => (
+            <p key={i}>{para}</p>
+          ))}
+        </div>
+
+        {post.products && post.products.length > 0 && (
+          <div className="mt-10 rounded-2xl border border-border bg-secondary/40 p-6">
+            <p className="text-xs font-bold uppercase tracking-wider text-accent">Featured products in this guide</p>
+            <div className="mt-4 space-y-3">
+              {post.products.map((p) => (
+                <a
+                  key={p.name}
+                  href={withUtm(p.url, `blog-${post.slug}`, p.name.toLowerCase().replace(/\s+/g, "-"))}
+                  target="_blank"
+                  rel="noopener noreferrer sponsored"
+                  className="flex items-center justify-between gap-3 rounded-xl border border-border bg-card px-4 py-3 transition-colors hover:bg-secondary"
+                >
+                  <div className="flex items-center gap-3">
+                    <img src={logoFor(p.url)} alt="" width={20} height={20} className="h-5 w-5 rounded" />
+                    <span className="text-sm font-semibold text-primary">{p.name}</span>
+                  </div>
+                  <div className="flex items-center gap-3 text-xs">
+                    <span className="font-bold text-foreground">{p.price}</span>
+                    <span className="rounded-full bg-accent/10 px-2 py-0.5 font-bold text-accent">{p.cb}</span>
+                  </div>
+                </a>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {post.highlights && post.highlights.length > 0 && (
+          <div className="mt-8 rounded-2xl border border-border bg-card p-6">
+            <p className="text-xs font-bold uppercase tracking-wider text-accent">Key takeaways</p>
+            <ul className="mt-3 space-y-2 text-sm text-foreground/85">
+              {post.highlights.map((h) => (
+                <li key={h} className="flex items-start gap-2">
+                  <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-accent" />
+                  {h}
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+      </article>
+
+      {/* RELATED */}
+      <section className="bg-secondary/40 py-16">
+        <div className="container">
+          <h2 className="text-2xl font-extrabold text-primary md:text-3xl">More articles you may like</h2>
+          <div className="mt-8 grid gap-6 md:grid-cols-3">
+            {recommended.map((p) => (
+              <Card key={p.slug} className="group flex flex-col overflow-hidden border-border shadow-card transition-all hover:-translate-y-1 hover:shadow-elegant">
+                <Link to={`/blog/${p.slug}`} className="block">
+                  <div className="relative h-40 overflow-hidden bg-secondary">
+                    <img src={p.image} alt={p.title} loading="lazy" className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                  </div>
+                </Link>
+                <CardContent className="flex flex-1 flex-col p-5">
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-accent">{p.tag}</span>
+                  <h3 className="mt-2 text-base font-bold text-primary group-hover:text-accent">
+                    <Link to={`/blog/${p.slug}`}>{p.title}</Link>
+                  </h3>
+                  <Button asChild variant="ghost" size="sm" className="mt-auto self-start text-accent hover:text-accent">
+                    <Link to={`/blog/${p.slug}`}>Read <ArrowRight className="ml-1 h-3.5 w-3.5" /></Link>
+                  </Button>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <Footer />
+    </main>
+  );
+};
+
+export default BlogPost;
