@@ -8,99 +8,9 @@ import SEO from "@/components/SEO";
 import { useState } from "react";
 import { toast } from "@/hooks/use-toast";
 import { withUtm } from "@/lib/affiliate";
-import skincare from "@/assets/seidenperle-woman-8606998.png";
-import holi from "@/assets/blog-holi.jpg";
-import valentine from "@/assets/blog-valentine.jpg";
-import streetwear from "@/assets/blog-streetwear.jpg";
-import health from "@/assets/blog-health.jpg";
-import wellness from "@/assets/blog-wellness.jpg";
+import { featuredPost as featured, otherPosts as posts } from "@/lib/blogPosts";
 
 const categories = ["All", "Cashback", "Tech", "Fashion", "Beauty", "Wellness", "Festive", "Guides"];
-
-const featured = {
-  title: "Top 5 Skin Care Brands of 2026: Wallet-Friendly Picks With Real Cashback",
-  excerpt:
-    "We tested 30 plus skincare brands available in India and shortlisted the 5 most-loved names that pair clean ingredients with serious savings on CouponMinty.",
-  author: "Priya Sharma",
-  date: "Apr 22, 2026",
-  read: "9 min",
-  tag: "Beauty",
-  image: skincare,
-  products: [
-    { name: "Plum Green Tea Toner", price: "₹390", cb: "12% CB", url: "https://plumgoodness.com" },
-    { name: "Mamaearth Vitamin C Serum", price: "₹599", cb: "10% CB", url: "https://mamaearth.in" },
-    { name: "The Derma Co Niacinamide", price: "₹525", cb: "9% CB", url: "https://thedermaco.com" },
-  ],
-};
-
-const posts = [
-  {
-    title: "World Health Day 2026: Free Habits That Cut Your Doctor Visits",
-    excerpt:
-      "Seven daily routines, backed by Indian doctors, that boost immunity and save you thousands on medical bills. Plus the best wellness brand offers this month.",
-    author: "Dr. Ananya Iyer",
-    date: "Apr 18, 2026",
-    read: "7 min",
-    tag: "Wellness",
-    image: health,
-    highlights: ["7 daily wellness habits", "Best Indian wellness brands", "Cashback on Pharmeasy & 1mg"],
-  },
-  {
-    title: "Case Study: The Rise of Bonkers Corner in Indian Streetwear",
-    excerpt:
-      "How a small Hyderabad-based label became India's most-talked-about streetwear brand, and how to grab their pieces with stacked CouponMinty cashback.",
-    author: "Karan Mehta",
-    date: "Apr 15, 2026",
-    read: "8 min",
-    tag: "Fashion",
-    image: streetwear,
-    highlights: ["Brand story breakdown", "Best-selling pieces", "Exclusive CouponMinty code"],
-  },
-  {
-    title: "HyugaLife Coupon Codes & Offers on CouponMinty",
-    excerpt:
-      "A full breakdown of every running HyugaLife discount, bank offer and the extra 10 percent cashback you only get through CouponMinty.",
-    author: "Neha Kapoor",
-    date: "Apr 10, 2026",
-    read: "5 min",
-    tag: "Wellness",
-    image: wellness,
-    highlights: ["All active HyugaLife codes", "Bank card offers", "Stacking guide"],
-  },
-  {
-    title: "Holi Sale 2026: Best Coupon Codes & Brand Discounts on CouponMinty",
-    excerpt:
-      "From fashion to electronics, here are the verified Holi 2026 deals worth your money plus ready-to-copy codes from 40 plus top Indian brands.",
-    author: "Rahul Verma",
-    date: "Mar 12, 2026",
-    read: "10 min",
-    tag: "Festive",
-    image: holi,
-    highlights: ["40 plus brand deals", "Up to 80 percent off", "Limited-time codes"],
-  },
-  {
-    title: "Valentine's Day Sales 2026: Top Brands Offering Unmissable Deals in India",
-    excerpt:
-      "Gifting ideas under ₹500, ₹1,000 and ₹2,500 with the highest cashback. Perfect for last-minute shoppers who still want to save.",
-    author: "Aditya Rao",
-    date: "Feb 08, 2026",
-    read: "6 min",
-    tag: "Festive",
-    image: valentine,
-    highlights: ["Gift ideas by budget", "Same-day delivery brands", "Best couple deals"],
-  },
-  {
-    title: "Becoming a CouponMinty Publisher: A Beginner's Guide",
-    excerpt:
-      "Earn from your blog, Telegram channel or YouTube. Here is exactly how to start, what tools to use, and how creators are making ₹50,000 plus a month.",
-    author: "Neha Kapoor",
-    date: "Feb 02, 2026",
-    read: "11 min",
-    tag: "Guides",
-    image: skincare,
-    highlights: ["Step-by-step setup", "Top earning niches", "Real income screenshots"],
-  },
-];
 
 const smallStoreCoupons = [
   { brand: "HyugaLife", title: "25% OFF Wellness plus 10% Cashback", code: "HYUGA25", url: "https://www.hyugalife.com", tag: "Wellness" },
@@ -193,46 +103,59 @@ const Blog = () => {
 
         <Card className="overflow-hidden border-border shadow-elegant">
           <div className="grid lg:grid-cols-2">
-            <div className="relative h-64 overflow-hidden lg:h-auto">
-              <img src={featured.image} alt={featured.title} loading="lazy" width={1024} height={576} className="h-full w-full object-cover" />
+            <Link to={`/blog/${featured.slug}`} className="relative block bg-secondary lg:h-auto">
+              <div className="flex h-64 items-center justify-center lg:h-full">
+                <img
+                  src={featured.image}
+                  alt={featured.title}
+                  loading="lazy"
+                  className="max-h-full max-w-full object-contain"
+                />
+              </div>
               <span className="absolute left-4 top-4 rounded-full bg-accent px-3 py-1 text-xs font-bold uppercase tracking-wider text-accent-foreground">
                 {featured.tag}
               </span>
-            </div>
+            </Link>
             <CardContent className="flex flex-col justify-center p-8 lg:p-10">
               <div className="flex flex-wrap items-center gap-4 text-xs text-muted-foreground">
                 <span className="inline-flex items-center gap-1"><Calendar className="h-3.5 w-3.5" /> {featured.date}</span>
                 <span className="inline-flex items-center gap-1"><Clock className="h-3.5 w-3.5" /> {featured.read}</span>
                 <span className="inline-flex items-center gap-1"><User className="h-3.5 w-3.5" /> {featured.author}</span>
               </div>
-              <h3 className="mt-4 text-2xl font-extrabold leading-snug text-primary md:text-3xl">{featured.title}</h3>
+              <h3 className="mt-4 text-2xl font-extrabold leading-snug text-primary md:text-3xl">
+                <Link to={`/blog/${featured.slug}`} className="hover:text-accent">{featured.title}</Link>
+              </h3>
               <p className="mt-3 text-muted-foreground">{featured.excerpt}</p>
 
               {/* Product details */}
-              <div className="mt-6 space-y-3">
-                <p className="text-xs font-bold uppercase tracking-wider text-accent">Featured products</p>
-                {featured.products.map((p) => (
-                  <a
-                    key={p.name}
-                    href={withUtm(p.url, "blog-featured", p.name.toLowerCase().replace(/\s+/g, "-"))}
-                    target="_blank"
-                    rel="noopener noreferrer sponsored"
-                    className="flex items-center justify-between gap-3 rounded-xl border border-border bg-secondary/40 px-4 py-3 transition-colors hover:bg-secondary"
-                  >
-                    <div className="flex items-center gap-3">
-                      <img src={logoFor(p.url)} alt="" width={20} height={20} className="h-5 w-5 rounded" />
-                      <span className="text-sm font-semibold text-primary">{p.name}</span>
-                    </div>
-                    <div className="flex items-center gap-3 text-xs">
-                      <span className="font-bold text-foreground">{p.price}</span>
-                      <span className="rounded-full bg-accent/10 px-2 py-0.5 font-bold text-accent">{p.cb}</span>
-                    </div>
-                  </a>
-                ))}
-              </div>
+              {featured.products && featured.products.length > 0 && (
+                <div className="mt-6 space-y-3">
+                  <p className="text-xs font-bold uppercase tracking-wider text-accent">Featured products</p>
+                  {featured.products.map((p) => (
+                    <a
+                      key={p.name}
+                      href={withUtm(p.url, "blog-featured", p.name.toLowerCase().replace(/\s+/g, "-"))}
+                      target="_blank"
+                      rel="noopener noreferrer sponsored"
+                      className="flex items-center justify-between gap-3 rounded-xl border border-border bg-secondary/40 px-4 py-3 transition-colors hover:bg-secondary"
+                    >
+                      <div className="flex items-center gap-3">
+                        <img src={logoFor(p.url)} alt="" width={20} height={20} className="h-5 w-5 rounded" />
+                        <span className="text-sm font-semibold text-primary">{p.name}</span>
+                      </div>
+                      <div className="flex items-center gap-3 text-xs">
+                        <span className="font-bold text-foreground">{p.price}</span>
+                        <span className="rounded-full bg-accent/10 px-2 py-0.5 font-bold text-accent">{p.cb}</span>
+                      </div>
+                    </a>
+                  ))}
+                </div>
+              )}
 
-              <Button className="mt-6 w-fit bg-accent-gradient text-accent-foreground hover:opacity-90">
-                Read full article <ArrowRight className="ml-1 h-4 w-4" />
+              <Button asChild className="mt-6 w-fit bg-accent-gradient text-accent-foreground hover:opacity-90">
+                <Link to={`/blog/${featured.slug}`}>
+                  Read full article <ArrowRight className="ml-1 h-4 w-4" />
+                </Link>
               </Button>
             </CardContent>
           </div>
@@ -248,38 +171,40 @@ const Blog = () => {
 
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {posts.map((p) => (
-            <Card key={p.title} className="group flex flex-col overflow-hidden border-border shadow-card transition-all hover:-translate-y-1 hover:shadow-elegant">
-              <div className="relative h-48 overflow-hidden">
-                <img src={p.image} alt={p.title} loading="lazy" width={1024} height={576} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+            <Card key={p.slug} className="group flex flex-col overflow-hidden border-border shadow-card transition-all hover:-translate-y-1 hover:shadow-elegant">
+              <Link to={`/blog/${p.slug}`} className="relative block h-48 overflow-hidden bg-secondary">
+                <img src={p.image} alt={p.title} loading="lazy" className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
                 <span className="absolute left-4 top-4 rounded-full bg-accent px-3 py-1 text-xs font-bold uppercase tracking-wider text-accent-foreground">
                   {p.tag}
                 </span>
-              </div>
+              </Link>
               <CardContent className="flex flex-1 flex-col p-6">
                 <div className="flex items-center gap-4 text-xs text-muted-foreground">
                   <span className="inline-flex items-center gap-1"><Calendar className="h-3.5 w-3.5" /> {p.date}</span>
                   <span className="inline-flex items-center gap-1"><Clock className="h-3.5 w-3.5" /> {p.read}</span>
                 </div>
                 <h3 className="mt-3 text-lg font-bold text-primary transition-colors group-hover:text-accent">
-                  {p.title}
+                  <Link to={`/blog/${p.slug}`}>{p.title}</Link>
                 </h3>
                 <p className="mt-2 text-sm text-muted-foreground">{p.excerpt}</p>
 
-                <ul className="mt-4 space-y-1.5 text-xs text-foreground/80">
-                  {p.highlights.map((h) => (
-                    <li key={h} className="flex items-start gap-2">
-                      <Star className="mt-0.5 h-3.5 w-3.5 flex-shrink-0 text-accent" />
-                      {h}
-                    </li>
-                  ))}
-                </ul>
+                {p.highlights && p.highlights.length > 0 && (
+                  <ul className="mt-4 space-y-1.5 text-xs text-foreground/80">
+                    {p.highlights.map((h) => (
+                      <li key={h} className="flex items-start gap-2">
+                        <Star className="mt-0.5 h-3.5 w-3.5 flex-shrink-0 text-accent" />
+                        {h}
+                      </li>
+                    ))}
+                  </ul>
+                )}
 
                 <div className="mt-5 flex items-center justify-between border-t border-border pt-4">
                   <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-primary">
                     <User className="h-3.5 w-3.5" /> {p.author}
                   </span>
-                  <Button variant="ghost" size="sm" className="text-accent hover:text-accent">
-                    Read <ArrowRight className="ml-1 h-3.5 w-3.5" />
+                  <Button asChild variant="ghost" size="sm" className="text-accent hover:text-accent">
+                    <Link to={`/blog/${p.slug}`}>Read <ArrowRight className="ml-1 h-3.5 w-3.5" /></Link>
                   </Button>
                 </div>
               </CardContent>
