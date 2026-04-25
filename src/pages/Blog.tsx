@@ -8,7 +8,7 @@ import SEO from "@/components/SEO";
 import { useState } from "react";
 import { toast } from "@/hooks/use-toast";
 import { withUtm } from "@/lib/affiliate";
-import skincare from "@/assets/blog-skincare.jpg";
+import skincare from "@/assets/seidenperle-woman-8606998.png";
 import holi from "@/assets/blog-holi.jpg";
 import valentine from "@/assets/blog-valentine.jpg";
 import streetwear from "@/assets/blog-streetwear.jpg";
