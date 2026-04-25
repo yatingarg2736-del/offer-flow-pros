@@ -10,7 +10,7 @@ const Footer = () => (
           </span>
           <span className="text-xl font-extrabold">Coupon<span className="text-accent">Minty</span></span>
         </div>
-        <p className="mt-4 max-w-xs text-sm text-white/70">India&apos;s most trusted coupons & cashback platform — saving members crores every month.</p>
+        <p className="mt-4 max-w-xs text-sm text-white/70">India&apos;s most trusted coupons & cashback platform, saving members crores every month.</p>
       </div>
       <div>
         <h4 className="text-sm font-bold uppercase tracking-wider text-white/90">Explore</h4>

@@ -80,13 +80,13 @@ const Index = () => {
   return (
     <main className="min-h-screen bg-background">
       <SEO
-        title="CouponMinty — Coupons, Cashback & Deals from 1,500+ Top Brands in India"
-        description="Save more with CouponMinty. Get verified coupons, extra cashback and exclusive offers from Amazon, Flipkart, Myntra, Swiggy, Nykaa, Croma & 1,500+ top brands."
+        title="CouponMinty: Coupons, Cashback & Deals from 1,500+ Top Brands in India"
+        description="Save more with CouponMinty. Get verified coupons, extra cashback and exclusive offers from Amazon, Flipkart, Myntra, Swiggy, Nykaa, Croma and 1,500+ top brands."
         canonical={SITE_URL}
         jsonLd={jsonLd}
       />
       <Navbar />
-      <h1 className="sr-only">CouponMinty — Coupons, Cashback & Travel Deals from Top Brands in India</h1>
+      <h1 className="sr-only">CouponMinty: Coupons, Cashback & Travel Deals from Top Brands in India</h1>
       <Hero />
       <Stats />
       <Stores />

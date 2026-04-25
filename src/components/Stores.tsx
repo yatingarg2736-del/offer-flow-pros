@@ -1,3 +1,5 @@
+import { withUtm } from "@/lib/affiliate";
+
 const stores = [
   { name: "Amazon", cb: "8%", url: "https://www.amazon.in", color: "from-amber-500 to-orange-500" },
   { name: "Flipkart", cb: "7.5%", url: "https://www.flipkart.com", color: "from-blue-500 to-indigo-600" },
@@ -19,14 +21,14 @@ const Stores = () => (
     <div className="mb-12 flex flex-col items-center text-center">
       <span className="text-xs font-bold uppercase tracking-widest text-accent">Top Brand Partners</span>
       <h2 id="stores-heading" className="mt-3 text-3xl font-extrabold text-primary md:text-4xl">Earn cashback at India&apos;s biggest stores</h2>
-      <p className="mt-3 max-w-2xl text-muted-foreground">Direct partnerships with 1,500+ MNCs — every purchase earns you guaranteed extra cashback.</p>
+      <p className="mt-3 max-w-2xl text-muted-foreground">Direct partnerships with 1,500+ MNCs. Every purchase earns you guaranteed extra cashback.</p>
     </div>
 
     <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4">
       {stores.map((s) => (
         <a
           key={s.name}
-          href={s.url}
+          href={withUtm(s.url, "stores", s.name.toLowerCase())}
           target="_blank"
           rel="noopener noreferrer sponsored"
           title={`Shop ${s.name} & earn cashback`}
