@@ -92,10 +92,10 @@ const ContactForms = () => {
           <form onSubmit={handleSubmit} className="grid gap-4 p-6 sm:p-8 md:grid-cols-2">
             {tab === "advertiser" ? (
               <>
-                <Field id="company" label="Company name" error={errors.company}><Input id="company" name="company" maxLength={100} placeholder="Acme Pvt Ltd" /></Field>
-                <Field id="name" label="Your name" error={errors.name}><Input id="name" name="name" maxLength={80} placeholder="Priya Sharma" /></Field>
-                <Field id="email" label="Work email" error={errors.email}><Input id="email" name="email" type="email" maxLength={255} placeholder="priya@acme.com" /></Field>
-                <Field id="website" label="Website" error={errors.website}><Input id="website" name="website" maxLength={255} placeholder="https://acme.com" /></Field>
+                <Field id="company" label="Company name" error={errors.company}><Input className="text-gray-900" id="company" name="company" maxLength={100} placeholder="Acme Pvt Ltd" /></Field>
+                <Field id="name" label="Your name" error={errors.name}><Input className="text-gray-900" id="name" name="name" maxLength={80} placeholder="Priya Sharma" /></Field>
+                <Field id="email" label="Work email" error={errors.email}><Input className="text-gray-900" id="email" name="email" type="email" maxLength={255} placeholder="priya@acme.com" /></Field>
+                <Field id="website" label="Website" error={errors.website}><Input className="text-gray-900" id="website" name="website" maxLength={255} placeholder="https://acme.com" /></Field>
                 <div className="md:col-span-2">
                   <Field id="message" label="Tell us about your goals" error={errors.message}>
                     <Textarea id="message" name="message" maxLength={1000} placeholder="Categories, regions, monthly budget…" rows={4} />
@@ -104,10 +104,10 @@ const ContactForms = () => {
               </>
             ) : (
               <>
-                <Field id="name" label="Your name" error={errors.name}><Input id="name" name="name" maxLength={80} placeholder="Rahul Mehta" /></Field>
-                <Field id="email" label="Email" error={errors.email}><Input id="email" name="email" type="email" maxLength={255} placeholder="you@channel.com" /></Field>
-                <Field id="channel" label="Channel / platform" error={errors.channel}><Input id="channel" name="channel" maxLength={120} placeholder="YouTube, Instagram, Blog…" /></Field>
-                <Field id="audience" label="Audience size" error={errors.audience}><Input id="audience" name="audience" maxLength={40} placeholder="e.g. 250K followers" /></Field>
+                <Field id="name" label="Your name" error={errors.name}><Input className="text-gray-900" id="name" name="name" maxLength={80} placeholder="Rahul Mehta" /></Field>
+                <Field id="email" label="Email" error={errors.email}><Input className="text-gray-900" id="email" name="email" type="email" maxLength={255} placeholder="you@channel.com" /></Field>
+                <Field id="channel" label="Channel / platform" error={errors.channel}><Input className="text-gray-900" id="channel" name="channel" maxLength={120} placeholder="YouTube, Instagram, Blog…" /></Field>
+                <Field id="audience" label="Audience size" error={errors.audience}><Input className="text-gray-900" id="audience" name="audience" maxLength={40} placeholder="e.g. 250K followers" /></Field>
                 <div className="md:col-span-2">
                   <Field id="message" label="About your audience" error={errors.message}>
                     <Textarea id="message" name="message" maxLength={1000} placeholder="Niche, geography, content type…" rows={4} />
