@@ -13,8 +13,8 @@ const SITE_URL = "https://couponminty.com";
 const DEFAULT_IMAGE = `${SITE_URL}/og-image.jpg`;
 
 const SEO = ({
-  title = "CouponMinty — Coupons, Cashback & Deals from 1,500+ Top Brands in India",
-  description = "Save more with CouponMinty. Get verified coupons, extra cashback and exclusive offers from Amazon, Flipkart, Myntra, Swiggy, Nykaa, Croma & 1,500+ top brands.",
+  title = "CouponMinty: Coupons, Cashback & Deals from 1,500+ Top Brands in India",
+  description = "Save more with CouponMinty. Get verified coupons, extra cashback and exclusive offers from Amazon, Flipkart, Myntra, Swiggy, Nykaa, Croma and 1,500+ top brands.",
   canonical = SITE_URL,
   image = DEFAULT_IMAGE,
   type = "website",

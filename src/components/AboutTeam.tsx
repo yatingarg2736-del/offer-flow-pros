@@ -5,7 +5,7 @@ const points = [
   { icon: Users, label: "200+ team members" },
   { icon: Briefcase, label: "12 offices across India" },
   { icon: Globe2, label: "Partners in 14 countries" },
-  { icon: Award, label: "Awarded ‘Best Affiliate 2024’" },
+  { icon: Award, label: "Awarded 'Best Affiliate 2024'" },
 ];
 
 const AboutTeam = () => (
