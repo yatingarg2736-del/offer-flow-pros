@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight, Calendar, Clock, User } from "lucide-react";
 import { Link } from "react-router-dom";
+import SEO from "@/components/SEO";
 
 const posts = [
   {
@@ -58,6 +59,23 @@ const posts = [
 
 const Blog = () => (
   <main className="min-h-screen bg-background">
+    <SEO
+      title="CouponMinty Blog — Cashback Tips, Deal Guides & Money-Saving Hacks"
+      description="Expert articles on cashback, coupons, e-commerce trends, tech buying guides and how to save more on every online order in India."
+      canonical="https://couponminty.com/blog"
+      jsonLd={{
+        "@context": "https://schema.org",
+        "@type": "Blog",
+        name: "CouponMinty Blog",
+        url: "https://couponminty.com/blog",
+        blogPost: posts.map((p) => ({
+          "@type": "BlogPosting",
+          headline: p.title,
+          author: { "@type": "Person", name: p.author },
+          datePublished: p.date,
+        })),
+      }}
+    />
     <Navbar />
 
     <section className="relative overflow-hidden bg-hero text-primary-foreground">
