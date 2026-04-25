@@ -1,6 +1,8 @@
+import { withUtm } from "@/lib/affiliate";
+
 const tech = [
   { name: "Amazon Electronics", cb: "Up to 8% Cashback", url: "https://www.amazon.in/electronics" },
-  { name: "Flipkart Mobiles", cb: "₹2,000 OFF + 6% CB", url: "https://www.flipkart.com/mobiles" },
+  { name: "Flipkart Mobiles", cb: "₹2,000 OFF plus 6% CB", url: "https://www.flipkart.com/mobiles" },
   { name: "Croma", cb: "10% on Laptops", url: "https://www.croma.com" },
   { name: "Reliance Digital", cb: "Flat ₹1,500 OFF", url: "https://www.reliancedigital.in" },
   { name: "boAt Lifestyle", cb: "12% on Audio", url: "https://www.boat-lifestyle.com" },
@@ -28,7 +30,7 @@ const Travel = () => (
       {tech.map((t) => (
         <a
           key={t.name}
-          href={t.url}
+          href={withUtm(t.url, "tech", t.name.toLowerCase().replace(/\s+/g, "-"))}
           target="_blank"
           rel="noopener noreferrer sponsored"
           title={`Shop ${t.name}`}

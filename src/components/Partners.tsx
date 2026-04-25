@@ -30,12 +30,14 @@ const logoFor = (url: string) => {
   return `https://www.google.com/s2/favicons?sz=64&domain=${domain}`;
 };
 
+import { withUtm } from "@/lib/affiliate";
+
 const Row = ({ reverse = false }: { reverse?: boolean }) => (
   <div className="flex gap-4 whitespace-nowrap animate-marquee" style={{ animationDirection: reverse ? "reverse" : "normal" }}>
     {[...brands, ...brands].map((b, i) => (
       <a
         key={i}
-        href={b.url}
+        href={withUtm(b.url, "partners", b.name.toLowerCase().replace(/\s+/g, "-"))}
         target="_blank"
         rel="noopener noreferrer sponsored"
         title={`Visit ${b.name}`}

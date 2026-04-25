@@ -62,7 +62,7 @@ const ContactForms = () => {
         <div className="mx-auto mb-10 max-w-2xl text-center">
           <span className="text-xs font-bold uppercase tracking-widest text-accent">Work With Us</span>
           <h2 className="mt-3 text-3xl font-extrabold md:text-4xl">Grow with CouponMinty</h2>
-          <p className="mt-3 text-white/75">Whether you&apos;re a brand looking for performance marketing or a creator monetising your audience — let&apos;s talk.</p>
+          <p className="mt-3 text-white/75">Whether you&apos;re a brand looking for performance marketing or a creator monetising your audience, let&apos;s talk.</p>
         </div>
 
         <div className="mx-auto max-w-3xl rounded-3xl bg-card p-2 shadow-elegant">

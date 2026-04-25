@@ -14,7 +14,7 @@ const Hero = () => (
           Extra Cashback on top of <span className="text-accent">every coupon</span> you use.
         </h1>
         <p className="mt-5 max-w-xl text-lg text-white/75">
-          CouponMinty partners with 1,500+ leading brands across shopping, travel, fashion and food — so you save more, every single order.
+          CouponMinty partners with 1,500+ leading brands across shopping, travel, fashion and food, so you save more on every single order.
         </p>
 
         <div className="mt-8 flex max-w-xl items-center gap-2 rounded-2xl bg-white p-2 shadow-elegant">
