@@ -1,4 +1,19 @@
-import { Sparkles, Mail, MapPin, Phone } from "lucide-react";
+import { Sparkles, Mail, MapPin } from "lucide-react";
+
+const explore = [
+  { label: "Stores", href: "#stores" },
+  { label: "Coupons", href: "#coupons" },
+  { label: "Travel Deals", href: "#travel" },
+  { label: "How It Works", href: "#how" },
+];
+
+const company = [
+  { label: "About Us", href: "#about" },
+  { label: "Blog", href: "/blog" },
+  { label: "Contact", href: "#contact" },
+  { label: "Privacy Policy", href: "#" },
+  { label: "Terms", href: "#" },
+];
 
 const Footer = () => (
   <footer className="bg-primary py-14 text-primary-foreground">
@@ -15,21 +30,30 @@ const Footer = () => (
       <div>
         <h4 className="text-sm font-bold uppercase tracking-wider text-white/90">Explore</h4>
         <ul className="mt-4 space-y-2 text-sm text-white/70">
-          {["Stores", "Coupons", "Travel Deals", "How It Works"].map((l) => <li key={l}><a href="#" className="hover:text-accent">{l}</a></li>)}
+          {explore.map((l) => (
+            <li key={l.label}><a href={l.href} className="hover:text-accent">{l.label}</a></li>
+          ))}
         </ul>
       </div>
       <div>
         <h4 className="text-sm font-bold uppercase tracking-wider text-white/90">Company</h4>
         <ul className="mt-4 space-y-2 text-sm text-white/70">
-          {["About Us", "Careers", "Press", "Privacy Policy", "Terms"].map((l) => <li key={l}><a href="#" className="hover:text-accent">{l}</a></li>)}
+          {company.map((l) => (
+            <li key={l.label}><a href={l.href} className="hover:text-accent">{l.label}</a></li>
+          ))}
         </ul>
       </div>
       <div>
         <h4 className="text-sm font-bold uppercase tracking-wider text-white/90">Contact</h4>
         <ul className="mt-4 space-y-3 text-sm text-white/70">
-          <li className="flex items-center gap-2"><Mail className="h-4 w-4 text-accent" /> partners@couponminty.com</li>
-          <li className="flex items-center gap-2"><Phone className="h-4 w-4 text-accent" /> +91 80 4567 8900</li>
-          <li className="flex items-start gap-2"><MapPin className="mt-0.5 h-4 w-4 text-accent" /> Prestige Tower, Bengaluru, India</li>
+          <li className="flex items-start gap-2">
+            <Mail className="mt-0.5 h-4 w-4 shrink-0 text-accent" />
+            <a href="mailto:contact@couponminty.com" className="hover:text-accent">contact@couponminty.com</a>
+          </li>
+          <li className="flex items-start gap-2">
+            <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-accent" />
+            <span>A2 405, Aangan Gurgaon by Adani, Pataudi Rd, Sector 89A, Gurugram, Haryana 122505</span>
+          </li>
         </ul>
       </div>
     </div>
