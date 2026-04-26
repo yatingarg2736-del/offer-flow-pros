@@ -11,7 +11,7 @@ const Hero = () => {
   const [query, setQuery] = useState("");
   const [open, setOpen] = useState(false);
   const [submitted, setSubmitted] = useState("");
-  const wrapRef = useRef<HTMLDivElement>(null);
+  const wrapRef = useRef<HTMLFormElement>(null);
 
   useEffect(() => {
     const onClick = (e: MouseEvent) => {
