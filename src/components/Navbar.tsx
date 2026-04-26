@@ -4,7 +4,8 @@ import { Sparkles, Menu, X } from "lucide-react";
 const links = [
   { label: "Stores", href: "/#stores" },
   { label: "Coupons", href: "/#coupons" },
-  { label: "Tech", href: "/#tech" },
+  { label: "Travel", href: "/#travel" },
+  { label: "About", href: "/#about" },
   { label: "How it Works", href: "/#how" },
   { label: "Blog", href: "/blog" },
   { label: "Contact", href: "/#contact" },

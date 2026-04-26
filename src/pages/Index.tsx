@@ -10,6 +10,7 @@ import AboutTeam from "@/components/AboutTeam";
 import ContactForms from "@/components/ContactForms";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
+import EmailPopup from "@/components/EmailPopup";
 
 const SITE_URL = "https://couponminty.com";
 
@@ -97,6 +98,7 @@ const Index = () => {
       <AboutTeam />
       <ContactForms />
       <Footer />
+      <EmailPopup />
     </main>
   );
 };
