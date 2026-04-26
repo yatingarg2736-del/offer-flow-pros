@@ -17,4 +17,14 @@
   <url><loc>https://couponminty.com/blog/holi-sale-2026-coupon-codes</loc><priority>0.7</priority></url>
   <url><loc>https://couponminty.com/blog/valentines-day-2026-deals</loc><priority>0.7</priority></url>
   <url><loc>https://couponminty.com/blog/couponminty-publisher-guide</loc><priority>0.7</priority></url>
+  <url>
+    <loc>https://www.couponminty.com/privacy-policy</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://www.couponminty.com/terms</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
 </urlset>

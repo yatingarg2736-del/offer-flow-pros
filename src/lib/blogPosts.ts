@@ -1,9 +1,9 @@
-import skincare from "@/assets/seidenperle-woman-8606998.png";
-import holi from "@/assets/blog-holi.jpg";
-import valentine from "@/assets/blog-valentine.jpg";
-import streetwear from "@/assets/blog-streetwear.jpg";
-import health from "@/assets/blog-health.jpg";
-import wellness from "@/assets/blog-wellness.jpg";
+import skincare from "@/assets/seidenperle-woman-8606998.webp";
+import holi from "@/assets/blog-holi.webp";
+import valentine from "@/assets/blog-valentine.webp";
+import streetwear from "@/assets/blog-streetwear.webp";
+import health from "@/assets/blog-health.webp";
+import wellness from "@/assets/blog-wellness.webp";
 
 export type BlogProduct = { name: string; price: string; cb: string; url: string };
 
