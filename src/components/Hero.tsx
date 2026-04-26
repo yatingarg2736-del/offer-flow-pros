@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, BadgeCheck, Search, Tag, Store as StoreIcon, X } from "lucide-react";
-import hero from "@/assets/hero.jpg";
+import hero from "@/assets/hero.webp";
 import { stores, coupons, logoFor } from "@/lib/dealsData";
 import { withUtm } from "@/lib/affiliate";
 
@@ -125,8 +125,10 @@ const Hero = () => {
           <img
             src={hero}
             alt="CouponMinty cashback and coupons"
-            width={1536}
-            height={1024}
+            width={1200}
+            height={600}
+            fetchPriority="high"
+            decoding="async"
             className="relative animate-float rounded-3xl shadow-elegant"
           />
         </div>

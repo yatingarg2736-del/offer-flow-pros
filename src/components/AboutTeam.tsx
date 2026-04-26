@@ -1,4 +1,4 @@
-import team from "@/assets/team.jpg";
+import team from "@/assets/team.webp";
 import { Users, Briefcase, Globe2, Award } from "lucide-react";
 
 const points = [
@@ -16,9 +16,10 @@ const AboutTeam = () => (
         <img
           src={team}
           alt="CouponMinty partnerships team"
-          width={1536}
-          height={1024}
+          width={400}
+          height={400}
           loading="lazy"
+          decoding="async"
           className="relative rounded-3xl shadow-elegant"
         />
       </div>

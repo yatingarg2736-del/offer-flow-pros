@@ -80,7 +80,7 @@ const Travel = () => (
         return (
           <article key={d.title} className="group overflow-hidden rounded-2xl border border-border bg-card shadow-card transition-all hover:-translate-y-1 hover:shadow-elegant">
             <div className="relative h-44 overflow-hidden">
-              <img src={d.image} alt={d.title} loading="lazy" className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" />
+              <img src={d.image} alt={d.title} width={600} height={400} loading="lazy" decoding="async" className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" />
               <span className="absolute left-3 top-3 inline-flex items-center gap-1 rounded-full bg-white/95 px-2.5 py-1 text-xs font-bold text-primary shadow-card">
                 <Icon className="h-3.5 w-3.5 text-accent" /> {d.type}
               </span>

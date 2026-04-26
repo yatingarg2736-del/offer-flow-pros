@@ -108,7 +108,10 @@ const Blog = () => {
                 <img
                   src={featured.image}
                   alt={featured.title}
+                  width={900}
+                  height={256}
                   loading="lazy"
+                  decoding="async"
                   className="max-h-full max-w-full object-contain"
                 />
               </div>
@@ -173,7 +176,7 @@ const Blog = () => {
           {posts.map((p) => (
             <Card key={p.slug} className="group flex flex-col overflow-hidden border-border shadow-card transition-all hover:-translate-y-1 hover:shadow-elegant">
               <Link to={`/blog/${p.slug}`} className="relative block h-48 overflow-hidden bg-secondary">
-                <img src={p.image} alt={p.title} loading="lazy" className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                <img src={p.image} alt={p.title} width={900} height={256} loading="lazy" decoding="async" className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
                 <span className="absolute left-4 top-4 rounded-full bg-accent px-3 py-1 text-xs font-bold uppercase tracking-wider text-accent-foreground">
                   {p.tag}
                 </span>
