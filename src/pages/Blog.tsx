@@ -103,16 +103,16 @@ const Blog = () => {
 
         <Card className="overflow-hidden border-border shadow-elegant">
           <div className="grid lg:grid-cols-2">
-            <Link to={`/blog/${featured.slug}`} className="relative block bg-secondary lg:h-auto">
-              <div className="flex h-64 items-center justify-center lg:h-full">
+            <Link to={`/blog/${featured.slug}`} className="relative block bg-secondary">
+              <div className="aspect-[16/9] w-full overflow-hidden lg:h-full lg:aspect-auto">
                 <img
                   src={featured.image}
                   alt={featured.title}
-                  width={900}
-                  height={256}
+                  width={1280}
+                  height={720}
                   loading="lazy"
                   decoding="async"
-                  className="max-h-full max-w-full object-contain"
+                  className="h-full w-full object-cover"
                 />
               </div>
               <span className="absolute left-4 top-4 rounded-full bg-accent px-3 py-1 text-xs font-bold uppercase tracking-wider text-accent-foreground">
@@ -175,8 +175,8 @@ const Blog = () => {
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {posts.map((p) => (
             <Card key={p.slug} className="group flex flex-col overflow-hidden border-border shadow-card transition-all hover:-translate-y-1 hover:shadow-elegant">
-              <Link to={`/blog/${p.slug}`} className="relative block h-48 overflow-hidden bg-secondary">
-                <img src={p.image} alt={p.title} width={900} height={256} loading="lazy" decoding="async" className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+              <Link to={`/blog/${p.slug}`} className="relative block aspect-[16/9] overflow-hidden bg-secondary">
+                <img src={p.image} alt={p.title} width={1280} height={720} loading="lazy" decoding="async" className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
                 <span className="absolute left-4 top-4 rounded-full bg-accent px-3 py-1 text-xs font-bold uppercase tracking-wider text-accent-foreground">
                   {p.tag}
                 </span>

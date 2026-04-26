@@ -84,15 +84,15 @@ const BlogPost = () => {
 
       {/* HERO IMAGE */}
       <section className="container -mt-2 py-8">
-        <div className="overflow-hidden rounded-3xl border border-border bg-secondary shadow-elegant">
+        <div className="aspect-[16/9] overflow-hidden rounded-3xl border border-border bg-secondary shadow-elegant">
           <img
             src={post.image}
             alt={post.title}
-            width={900}
-            height={256}
+            width={1280}
+            height={720}
             loading="lazy"
             decoding="async"
-            className="h-auto w-full object-contain"
+            className="h-full w-full object-cover"
           />
         </div>
       </section>
@@ -155,8 +155,8 @@ const BlogPost = () => {
             {recommended.map((p) => (
               <Card key={p.slug} className="group flex flex-col overflow-hidden border-border shadow-card transition-all hover:-translate-y-1 hover:shadow-elegant">
                 <Link to={`/blog/${p.slug}`} className="block">
-                  <div className="relative h-40 overflow-hidden bg-secondary">
-                    <img src={p.image} alt={p.title} width={900} height={256} loading="lazy" decoding="async" className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                  <div className="relative aspect-[16/9] overflow-hidden bg-secondary">
+                    <img src={p.image} alt={p.title} width={1280} height={720} loading="lazy" decoding="async" className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
                   </div>
                 </Link>
                 <CardContent className="flex flex-1 flex-col p-5">
