@@ -9,7 +9,7 @@ const points = [
 ];
 
 const AboutTeam = () => (
-  <section className="container py-20">
+  <section id="about" className="container py-20">
     <div className="grid items-center gap-12 lg:grid-cols-2">
       <div className="relative">
         <div className="absolute -inset-4 rounded-3xl bg-accent/15 blur-2xl" />
@@ -26,7 +26,10 @@ const AboutTeam = () => (
         <span className="text-xs font-bold uppercase tracking-widest text-accent">About CouponMinty</span>
         <h2 className="mt-3 text-3xl font-extrabold text-primary md:text-4xl">A passionate team building India&apos;s largest savings network</h2>
         <p className="mt-4 text-muted-foreground">
-          Founded in 2017, CouponMinty is now a trusted partner to 1,500+ merchants and serves over 25 million members. Our 200+ specialists in tech, partnerships and customer success work round-the-clock so you save more on every purchase.
+          Founded in 2017 and headquartered in Gurugram, CouponMinty is a trusted partner to 1,500+ merchants and serves over 25 million members across India. Our mission is simple: make every online purchase more rewarding with verified coupons and guaranteed cashback, so families save real money on the things they already buy.
+        </p>
+        <p className="mt-3 text-muted-foreground">
+          Our 200+ specialists across technology, brand partnerships and customer success work round-the-clock to track new deals, validate coupon codes and process cashback payouts within hours, not weeks.
         </p>
         <div className="mt-8 grid gap-4 sm:grid-cols-2">
           {points.map((p) => (

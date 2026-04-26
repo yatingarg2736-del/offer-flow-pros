@@ -5,7 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "@/hooks/use-toast";
-import { Megaphone, TrendingUp } from "lucide-react";
+import { Megaphone, TrendingUp, Mail, MapPin } from "lucide-react";
 
 const advertiserSchema = z.object({
   company: z.string().trim().min(2, "Company name required").max(100),
@@ -75,6 +75,16 @@ const ContactForms = () => {
           <span className="text-xs font-bold uppercase tracking-widest text-accent">Work With Us</span>
           <h2 className="mt-3 text-3xl font-extrabold md:text-4xl">Grow with CouponMinty</h2>
           <p className="mt-3 text-white/75">Whether you&apos;re a brand looking for performance marketing or a creator monetising your audience, let&apos;s talk.</p>
+          <div className="mt-6 grid gap-3 text-left text-sm text-white/80 sm:grid-cols-2">
+            <div className="flex items-start gap-2 rounded-xl border border-white/10 bg-white/5 p-3">
+              <Mail className="mt-0.5 h-4 w-4 shrink-0 text-accent" />
+              <a href="mailto:contact@couponminty.com" className="hover:text-accent">contact@couponminty.com</a>
+            </div>
+            <div className="flex items-start gap-2 rounded-xl border border-white/10 bg-white/5 p-3">
+              <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-accent" />
+              <span>A2 405, Aangan Gurgaon by Adani, Pataudi Rd, Sector 89A, Gurugram, Haryana 122505</span>
+            </div>
+          </div>
         </div>
         <div className="mx-auto max-w-3xl rounded-3xl bg-card p-2 shadow-elegant">
           <div className="grid grid-cols-2 gap-1 rounded-2xl bg-secondary p-1">
