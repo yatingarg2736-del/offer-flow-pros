@@ -1,4 +1,4 @@
-import skincare from "@/assets/seidenperle-woman-8606998.webp";
+import skincare from "@/assets/blog-skincare.webp";
 import holi from "@/assets/blog-holi.webp";
 import valentine from "@/assets/blog-valentine.webp";
 import streetwear from "@/assets/blog-streetwear.webp";
