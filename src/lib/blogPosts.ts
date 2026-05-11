@@ -208,7 +208,6 @@ export const blogPosts: BlogPost[] = [
     read: "9 min",
     tag: "Beauty",
     image: skincare,
-    featured: true,
     products: [
       { name: "Plum Green Tea Toner", price: "₹390", cb: "12% CB", url: "https://plumgoodness.com" },
       { name: "Mamaearth Vitamin C Serum", price: "₹599", cb: "10% CB", url: "https://mamaearth.in" },
