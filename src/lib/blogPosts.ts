@@ -5,6 +5,18 @@ import streetwear from "@/assets/blog-streetwear.webp";
 import health from "@/assets/blog-health.webp";
 import wellness from "@/assets/blog-wellness.webp";
 import metgala from "@/assets/blog-metgala-hero.jpg";
+import metLook01 from "@/assets/metgala/look-01.jpg";
+import metLook02 from "@/assets/metgala/look-02.jpg";
+import metLook03 from "@/assets/metgala/look-03.jpg";
+import metLook04 from "@/assets/metgala/look-04.jpg";
+import metLook05 from "@/assets/metgala/look-05.jpg";
+import metLook06 from "@/assets/metgala/look-06.jpg";
+import metLook07 from "@/assets/metgala/look-07.jpg";
+import metLook08 from "@/assets/metgala/look-08.jpg";
+import metLook09 from "@/assets/metgala/look-09.jpg";
+import metLook10 from "@/assets/metgala/look-10.jpg";
+import metLook11 from "@/assets/metgala/look-11.jpg";
+import metLook12 from "@/assets/metgala/look-12.jpg";
 
 export type BlogProduct = { name: string; price: string; cb: string; url: string };
 
@@ -14,7 +26,7 @@ export type BlogLook = {
   wearing: string;
   paragraphs: string[];
   verdict: string;
-  gradient: string; // tailwind gradient classes for the placeholder
+  image: string;
 };
 
 export type BlogPost = {
