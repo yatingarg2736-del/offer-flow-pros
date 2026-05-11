@@ -115,11 +115,17 @@ const BlogPost = () => {
                   idx % 2 === 1 ? "md:[&>div:first-child]:order-2" : ""
                 }`}
               >
-                <div
-                  className={`relative aspect-[3/4] overflow-hidden rounded-2xl bg-gradient-to-br ${look.gradient} shadow-elegant`}
-                  aria-label={`${look.name} look illustration`}
-                >
-                  <span className="absolute bottom-3 left-4 text-[10px] font-semibold uppercase tracking-widest text-white/70">
+                <div className="relative aspect-[3/4] overflow-hidden rounded-2xl bg-secondary shadow-elegant">
+                  <img
+                    src={look.image}
+                    alt={`${look.name} on the Met Gala 2026 red carpet, ${look.wearing}`}
+                    width={768}
+                    height={1024}
+                    loading="lazy"
+                    decoding="async"
+                    className="h-full w-full object-cover"
+                  />
+                  <span className="absolute bottom-3 left-4 rounded-full bg-black/50 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-widest text-white backdrop-blur-sm">
                     {look.name} · {look.number}
                   </span>
                 </div>
