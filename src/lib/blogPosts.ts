@@ -73,7 +73,7 @@ export const blogPosts: BlogPost[] = [
         number: "Look 01",
         name: "Isha Ambani",
         wearing: "In custom Anamika Khanna with Schiaparelli haute joaillerie",
-        gradient: "from-[#d4a574] to-[#8b5a3c]",
+        image: metLook01,
         paragraphs: [
           "Ambani has spent the last several Met Galas building a slow, deliberate case for Indian couture on the international steps, and this year felt like the closing argument. The gown — a structured drape in oxidised gold tissue, with a hand-embroidered bodice that referenced 17th-century Mughal miniatures — was reportedly six months in atelier. The neckpiece, a yellow diamond rivière borrowed from the family vault and reset for the evening, did most of the talking.",
           "What worked was the editing. There was no veil, no second layer, no train flourish. Just one gesture, executed with the patience of someone who no longer needs to introduce herself.",
@@ -84,7 +84,7 @@ export const blogPosts: BlogPost[] = [
         number: "Look 02",
         name: "Simone Ashley",
         wearing: "In Sabyasachi, with Bulgari emeralds",
-        gradient: "from-[#2c3e50] to-[#34495e]",
+        image: metLook02,
         paragraphs: [
           "Ashley has been quietly cultivating one of the more interesting style arcs in the British-Indian crossover lane, and her choice of a Sabyasachi gown — black velvet, with antique-silver zardozi running the length of a side-swept train — felt like a deliberate handing-over of credit. The silhouette was distinctly Western, the language entirely subcontinental. Emeralds at the throat, a low chignon, no other ornamentation.",
           "It was the kind of look that doesn't try to be the photograph of the night. It just becomes one anyway.",
@@ -95,7 +95,7 @@ export const blogPosts: BlogPost[] = [
         number: "Look 03",
         name: "Karan Johar",
         wearing: "In Manish Malhotra, with vintage cufflinks",
-        gradient: "from-[#1a1a1a] to-[#3d3d3d]",
+        image: metLook03,
         paragraphs: [
           "Johar arrived in a tuxedo that read as a love letter to old Bombay tailoring — a long-line silk-blend jacket in midnight ink, with hand-stitched lapels, worn over a high-collared kurta-style shirt. The detailing only revealed itself on the close-up: chikankari running along the placket, almost invisible until the flashbulbs caught it.",
           "It was a look that understood the assignment of the Met without performing it. There was no costume here, just craftsmanship, and that distinction is increasingly rare on these steps.",
@@ -106,7 +106,7 @@ export const blogPosts: BlogPost[] = [
         number: "Look 04",
         name: "Diljit Dosanjh",
         wearing: "In Prabal Gurung, with a custom Punjabi-script kalgi",
-        gradient: "from-[#c9a961] to-[#8b6f3d]",
+        image: metLook04,
         paragraphs: [
           "If anyone was going to commit to the carpet this year, it was always going to be Dosanjh. The look — a champagne sherwani in raw silk, with chevron-cut bullion embroidery running from shoulder to hem — was paired with a turban set with a kalgi inscribed in Gurmukhi script. He brought his own iconography and made the Gala meet him halfway.",
           "The crowd noticed. The cameras noticed. The choice to lean into a regional Punjabi visual grammar, rather than a pan-Indian one, was the most quietly radical statement of the evening.",
@@ -117,7 +117,7 @@ export const blogPosts: BlogPost[] = [
         number: "Look 05",
         name: "Sawai Padmanabh Singh ('Pacho')",
         wearing: "In custom Raghavendra Rathore, with heritage jewels from the House of Jaipur",
-        gradient: "from-[#4a1c1c] to-[#8b3a3a]",
+        image: metLook05,
         paragraphs: [
           "The Maharaja of Jaipur has the easiest visual brief in the room and the hardest creative one: he has to make heritage look contemporary without diluting either. He did it cleanly this year. A bandhgala in deep oxblood velvet, with a high collar, paired with churidars and a single emerald sarpech that had reportedly not left the family treasury in three decades.",
           "There was something almost stubborn about the simplicity of it. He wasn't competing with the carpet. He was reminding it that some silhouettes don't need to be reinvented.",
@@ -128,7 +128,7 @@ export const blogPosts: BlogPost[] = [
         number: "Look 06",
         name: "Gauravi Kumari",
         wearing: "In Tarun Tahiliani, with Jaipur Gems",
-        gradient: "from-[#f5e6d3] to-[#c9a961]",
+        image: metLook06,
         paragraphs: [
           "The Princess of Jaipur made her Met debut in a gown that read as a conversation between two cities — a pale-bone bustier in draped tulle, with an embroidered overlay that nodded to the frescoes of the City Palace, and a sweeping train that pooled like watered silk. The styling was deliberately youthful: minimal jewellery, an unfussy half-up, no statement clutch.",
           "For a first appearance, it was remarkably unshowy. She let the dress do the work, which is exactly what you want a debut to do.",
@@ -139,7 +139,7 @@ export const blogPosts: BlogPost[] = [
         number: "Look 07",
         name: "Natasha Poonawalla",
         wearing: "In Iris van Herpen couture, with a custom Sabyasachi headpiece",
-        gradient: "from-[#1c2942] to-[#3a4a6b]",
+        image: metLook07,
         paragraphs: [
           "Poonawalla has become something of a Met Gala specialist — the person whose look you scroll for first — and this year she did not under-deliver. The dress was a sculptural Iris van Herpen piece in liquid indigo, all 3D-printed pleats radiating from a corseted core, but the headpiece was the surprise: a Sabyasachi crown in tarnished silver, set with uncut diamonds, that fused the futurist gown to something distinctly subcontinental.",
           "It was the rare collaboration that didn't read as a collision. Both designers were audible.",
@@ -150,7 +150,7 @@ export const blogPosts: BlogPost[] = [
         number: "Look 08",
         name: "Sudha Reddy",
         wearing: "In Gaurav Gupta, with custom Forevermark diamonds",
-        gradient: "from-[#2d1b3d] to-[#5e3a7a]",
+        image: metLook08,
         paragraphs: [
           "Reddy continues to be one of the more genuinely adventurous dressers on the Met circuit, and her Gaurav Gupta gown — molten plum, with a hand-sculpted thorax-style bodice and a tendril train that seemed to writhe behind her — was the kind of look that earned a second pass from every photographer on the line.",
           "The diamond suite, set in pieces designed to echo the gown's organic spirals, lifted the whole thing from costume to couture. Maximalism with a structural logic.",
@@ -161,7 +161,7 @@ export const blogPosts: BlogPost[] = [
         number: "Look 09",
         name: "Manish Malhotra",
         wearing: "In a self-designed bandhgala, with archival pieces",
-        gradient: "from-[#6b1f3a] to-[#a8385e]",
+        image: metLook09,
         paragraphs: [
           "The designer arrived dressed in his own grammar — a long bandhgala in inky burgundy, with mirror-work running along the cuffs and a single antique brooch at the collar. Malhotra has been quietly building his international visibility for years, and his presence on the steps this year felt less like a guest appearance and more like a homecoming for Indian couture itself.",
           "He kept the look austere on purpose. The work, after all, was already on three other women on the carpet.",
@@ -172,7 +172,7 @@ export const blogPosts: BlogPost[] = [
         number: "Look 10",
         name: "Ananya Birla",
         wearing: "In Rahul Mishra, with Cartier high jewellery",
-        gradient: "from-[#0d1b2a] to-[#1b2e4a]",
+        image: metLook10,
         paragraphs: [
           "Birla's Rahul Mishra gown was, in some ways, the most technically ambitious piece on the carpet — a midnight-navy creation with three-dimensional embroidered florals that ran from the shoulder to the hem in a controlled riot, each blossom hand-finished. The work was the entire point of the look, and she wore it with the stillness that lets that kind of craftsmanship be seen.",
           "Cartier provided a discreet diamond cuff, an emerald drop, and not much else. The dress, sensibly, was not asked to share the frame.",
@@ -183,7 +183,7 @@ export const blogPosts: BlogPost[] = [
         number: "Look 11",
         name: "Diya Mehta",
         wearing: "In Falguni Shane Peacock, with antique kundan",
-        gradient: "from-[#d4af37] to-[#8b7355]",
+        image: metLook11,
         paragraphs: [
           "Mehta arrived in something genuinely surprising — a metallic-gold gown with a high mandarin collar and a fully embellished skirt that moved like chainmail, paired with antique kundan earrings that grounded the look in something older. The styling read as a deliberate break from the lehenga-and-saree route most of her contemporaries take to the steps.",
           "It was a gamble, and it paid. She looked, for the entire length of the carpet, like she belonged on it.",
@@ -194,7 +194,7 @@ export const blogPosts: BlogPost[] = [
         number: "Look 12",
         name: "Bhavitha Mandava",
         wearing: "In Amit Aggarwal, with custom Tanishq jewels",
-        gradient: "from-[#ede0c8] to-[#b8945f]",
+        image: metLook12,
         paragraphs: [
           "Mandava closed the Indian contingent in an Amit Aggarwal gown that was, on first glance, almost shockingly minimal — a pale-ivory column in metallic-blended fabric, with the designer's signature ribbon work running in a single diagonal from shoulder to knee. It was the kind of look that rewarded a closer photograph; the texture only revealed itself in flash.",
           "Paired with a polki choker that softened the futurism, it was a debut that suggested patience. She arrived without trying to arrive, which is the trick of these steps.",
