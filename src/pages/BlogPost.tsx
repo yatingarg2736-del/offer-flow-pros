@@ -106,6 +106,56 @@ const BlogPost = () => {
           ))}
         </div>
 
+        {post.looks && post.looks.length > 0 && (
+          <div className="mt-14 space-y-16">
+            {post.looks.map((look, idx) => (
+              <div
+                key={look.number}
+                className={`grid gap-8 md:grid-cols-2 md:items-center ${
+                  idx % 2 === 1 ? "md:[&>div:first-child]:order-2" : ""
+                }`}
+              >
+                <div
+                  className={`relative aspect-[3/4] overflow-hidden rounded-2xl bg-gradient-to-br ${look.gradient} shadow-elegant`}
+                  aria-label={`${look.name} look illustration`}
+                >
+                  <span className="absolute bottom-3 left-4 text-[10px] font-semibold uppercase tracking-widest text-white/70">
+                    {look.name} · {look.number}
+                  </span>
+                </div>
+                <div>
+                  <p className="text-xs font-bold uppercase tracking-[0.3em] text-accent">{look.number}</p>
+                  <h3 className="mt-3 text-2xl font-extrabold leading-tight text-primary md:text-3xl">{look.name}</h3>
+                  <p className="mt-2 text-base italic text-muted-foreground">{look.wearing}</p>
+                  <div className="mt-4 space-y-3 text-base leading-relaxed text-foreground/85">
+                    {look.paragraphs.map((p, i) => (
+                      <p key={i}>{p}</p>
+                    ))}
+                  </div>
+                  <div className="mt-5 rounded-r-lg border-l-[3px] border-accent bg-accent/5 px-5 py-4">
+                    <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-accent">Verdict</p>
+                    <p className="mt-1 text-sm italic text-foreground/90">{look.verdict}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
+
+        {post.pullQuote && (
+          <blockquote className="mt-16 border-l-4 border-accent bg-secondary/40 px-6 py-6 text-xl font-semibold italic leading-snug text-primary md:text-2xl">
+            "{post.pullQuote}"
+          </blockquote>
+        )}
+
+        {post.outro && post.outro.length > 0 && (
+          <div className="mt-12 space-y-5 text-base leading-relaxed text-foreground/85">
+            {post.outro.map((p, i) => (
+              <p key={i}>{p}</p>
+            ))}
+          </div>
+        )}
+
         {post.products && post.products.length > 0 && (
           <div className="mt-10 rounded-2xl border border-border bg-secondary/40 p-6">
             <p className="text-xs font-bold uppercase tracking-wider text-accent">Featured products in this guide</p>
