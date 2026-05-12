@@ -48,7 +48,6 @@ const PartnerDeals = () => {
             Exclusive cashback offers from our trusted global partners. Verified and ready to use.
           </p>
         </div>
-
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {partnerDeals.map((deal) => (
             <div
@@ -58,7 +57,6 @@ const PartnerDeals = () => {
               <span className="absolute top-4 right-4 text-xs font-medium px-2 py-1 rounded-full bg-muted text-muted-foreground">
                 {deal.badge}
               </span>
-
               <div className="mb-4">
                 <span className="inline-block text-xs font-medium px-2 py-1 rounded-md bg-primary/10 text-primary mb-3">
                   {deal.category}
@@ -73,7 +71,6 @@ const PartnerDeals = () => {
                   {deal.description}
                 </p>
               </div>
-
               
                 href={deal.link}
                 target="_blank"
@@ -86,7 +83,6 @@ const PartnerDeals = () => {
             </div>
           ))}
         </div>
-
         <p className="text-center text-xs text-muted-foreground mt-8 max-w-2xl mx-auto">
           Disclosure: CouponMinty earns a commission when you click these links and make a purchase. This does not affect the price you pay.
         </p>
@@ -96,3 +92,9 @@ const PartnerDeals = () => {
 };
 
 export default PartnerDeals;
+```
+
+## The fix in one line
+
+The only difference is the line:
+```
