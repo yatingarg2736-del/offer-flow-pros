@@ -41,60 +41,27 @@ const PartnerDeals = () => {
     <section className="py-16 px-4 bg-background">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-3">
-            Featured Partner Deals
-          </h2>
-          <p className="text-muted-foreground text-base md:text-lg max-w-2xl mx-auto">
-            Exclusive cashback offers from our trusted global partners. Verified and ready to use.
-          </p>
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-3">Featured Partner Deals</h2>
+          <p className="text-muted-foreground text-base md:text-lg max-w-2xl mx-auto">Exclusive cashback offers from our trusted global partners. Verified and ready to use.</p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {partnerDeals.map((deal) => (
-            <div
-              key={deal.brand}
-              className="relative bg-card border border-border rounded-2xl p-6 shadow-sm hover:shadow-lg transition-shadow duration-300 flex flex-col"
-            >
-              <span className="absolute top-4 right-4 text-xs font-medium px-2 py-1 rounded-full bg-muted text-muted-foreground">
-                {deal.badge}
-              </span>
+            <div key={deal.brand} className="relative bg-card border border-border rounded-2xl p-6 shadow-sm hover:shadow-lg transition-shadow duration-300 flex flex-col">
+              <span className="absolute top-4 right-4 text-xs font-medium px-2 py-1 rounded-full bg-muted text-muted-foreground">{deal.badge}</span>
               <div className="mb-4">
-                <span className="inline-block text-xs font-medium px-2 py-1 rounded-md bg-primary/10 text-primary mb-3">
-                  {deal.category}
-                </span>
-                <h3 className="text-xl font-bold text-foreground mb-2">
-                  {deal.brand}
-                </h3>
-                <p className="text-lg font-semibold text-primary mb-3">
-                  {deal.headline}
-                </p>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  {deal.description}
-                </p>
+                <span className="inline-block text-xs font-medium px-2 py-1 rounded-md bg-primary/10 text-primary mb-3">{deal.category}</span>
+                <h3 className="text-xl font-bold text-foreground mb-2">{deal.brand}</h3>
+                <p className="text-lg font-semibold text-primary mb-3">{deal.headline}</p>
+                <p className="text-sm text-muted-foreground leading-relaxed">{deal.description}</p>
               </div>
-              
-                href={deal.link}
-                target="_blank"
-                rel="nofollow sponsored noopener noreferrer"
-                onClick={() => handleAffiliateClick(deal.brand, deal.category)}
-                className="mt-auto inline-flex items-center justify-center px-4 py-3 rounded-lg bg-primary text-primary-foreground font-medium hover:opacity-90 transition-opacity"
-              >
-                Get Deal
-              </a>
+              <a href={deal.link} target="_blank" rel="nofollow sponsored noopener noreferrer" onClick={() => handleAffiliateClick(deal.brand, deal.category)} className="mt-auto inline-flex items-center justify-center px-4 py-3 rounded-lg bg-primary text-primary-foreground font-medium hover:opacity-90 transition-opacity">Get Deal</a>
             </div>
           ))}
         </div>
-        <p className="text-center text-xs text-muted-foreground mt-8 max-w-2xl mx-auto">
-          Disclosure: CouponMinty earns a commission when you click these links and make a purchase. This does not affect the price you pay.
-        </p>
+        <p className="text-center text-xs text-muted-foreground mt-8 max-w-2xl mx-auto">Disclosure: CouponMinty earns a commission when you click these links and make a purchase. This does not affect the price you pay.</p>
       </div>
     </section>
   );
 };
 
 export default PartnerDeals;
-```
-
-## The fix in one line
-
-The only difference is the line:
-```
