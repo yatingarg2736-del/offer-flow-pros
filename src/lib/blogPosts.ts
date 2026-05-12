@@ -5,18 +5,17 @@ import streetwear from "@/assets/blog-streetwear.webp";
 import health from "@/assets/blog-health.webp";
 import wellness from "@/assets/blog-wellness.webp";
 import metgala from "@/assets/blog-metgala-hero.jpg";
-import metLook01 from "@/assets/metgala/look-01.jpg";
-import metLook02 from "@/assets/metgala/look-02.jpg";
-import metLook03 from "@/assets/metgala/look-03.jpg";
-import metLook04 from "@/assets/metgala/look-04.jpg";
-import metLook05 from "@/assets/metgala/look-05.jpg";
-import metLook06 from "@/assets/metgala/look-06.jpg";
-import metLook07 from "@/assets/metgala/look-07.jpg";
-import metLook08 from "@/assets/metgala/look-08.jpg";
-import metLook09 from "@/assets/metgala/look-09.jpg";
-import metLook10 from "@/assets/metgala/look-10.jpg";
-import metLook11 from "@/assets/metgala/look-11.jpg";
-import metLook12 from "@/assets/metgala/look-12.jpg";
+import metIshaAmbani from "@/assets/metgala/isha-ambani.jpeg";
+import metSimoneAshley from "@/assets/metgala/simone-ashley.jpeg";
+import metKaranJohar from "@/assets/metgala/karan-johar.jpeg";
+import metSudhaReddy from "@/assets/metgala/sudha-reddy.jpeg";
+import metSawaiPadmanabh from "@/assets/metgala/sawai-padmanabh-singh.jpeg";
+import metNatashaPoonawalla from "@/assets/metgala/natasha-poonawalla.jpeg";
+import metManishMalhotra from "@/assets/metgala/manish-malhotra.jpeg";
+import metGauravi from "@/assets/metgala/look-06.jpg";
+import metAnanya from "@/assets/metgala/look-09.jpg";
+import metDiya from "@/assets/metgala/look-10.jpg";
+import metBhavitha from "@/assets/metgala/look-11.jpg";
 
 export type BlogProduct = { name: string; price: string; cb: string; url: string };
 
@@ -52,162 +51,151 @@ export const blogPosts: BlogPost[] = [
     slug: "met-gala-2026-india-took-the-steps",
     title: "Met Gala 2026: India Took the Steps",
     excerpt:
-      "From archival sari drama to bullion-stitched tuxedos, the contingent from across the subcontinent turned this year's Costume Institute Gala into a study in heritage, restraint, and the kind of confidence that makes a camera linger.",
-    author: "The Editors",
-    date: "May 11, 2026",
+      "From a saree carrying 1,800 carats of diamonds to a sculptural orchid built by a contemporary artist, the Indian contingent turned this year's \"Fashion Is Art\" carpet into a working argument for craft, heritage, and the limits of restraint.",
+    author: "Quill",
+    date: "May 5, 2026",
     read: "11 min",
     tag: "Fashion",
     image: metgala,
     featured: true,
     highlights: [
-      "12 Indian looks decoded",
+      "11 Indian looks decoded",
       "Designers, jewels & references",
       "Editor's verdict on each",
     ],
     content: [
-      "The Met Gala has always been a theatre of intention. You don't walk those steps; you arrive at them, costume first, biography second. This year, that theatre had a noticeably larger Indian cast — a dozen names spanning film, royalty, fashion, business, and the new aristocracy of philanthropy. Each of them arrived with a thesis. Some of those theses were whispered. A few were shouted. One was embroidered in real gold.",
-      "What follows is the breakdown, look by look. Who wore what, who designed it, what it meant — and, where it earned one, the verdict.",
+      "The 2026 Met Gala arrived with a brief that should, on paper, have favoured the Indian contingent above almost anyone else. The exhibition was titled \"Costume Art,\" the dress code \"Fashion Is Art\" — an invitation, essentially, to treat the carpet as a gallery wall. Indian fashion, with its centuries of hand-painted textiles, miniaturist traditions, and embroidery practices that read more like archival pieces than garments, did not have to translate itself for the theme. It only had to show up.",
+      "What follows is the breakdown, look by look. Who wore what, who designed it, what it referenced — and, where it earned one, the verdict.",
     ],
     looks: [
       {
         number: "Look 01",
         name: "Isha Ambani",
-        wearing: "In custom Anamika Khanna with Schiaparelli haute joaillerie",
-        image: metLook01,
+        wearing: "In a custom Gaurav Gupta saree, styled by Anaita Shroff Adajania",
+        image: metIshaAmbani,
         paragraphs: [
-          "Ambani has spent the last several Met Galas building a slow, deliberate case for Indian couture on the international steps, and this year felt like the closing argument. The gown — a structured drape in oxidised gold tissue, with a hand-embroidered bodice that referenced 17th-century Mughal miniatures — was reportedly six months in atelier. The neckpiece, a yellow diamond rivière borrowed from the family vault and reset for the evening, did most of the talking.",
-          "What worked was the editing. There was no veil, no second layer, no train flourish. Just one gesture, executed with the patience of someone who no longer needs to introduce herself.",
+          "Ambani's look was the night's most literal interpretation of the brief. The sculpted gold saree, designed by Gaurav Gupta, fused a modern silhouette with traditional drape and carried hand-painted Pichwai motifs across its surface — a direct nod to one of India's most enduring devotional art traditions. The bodice was the centrepiece, embellished with over 1,800 carats of diamonds, emeralds, polki and kundan drawn from the family's private collection.",
+          "What anchored the look was the editing. A maximalist concept can easily collapse under its own weight; this one didn't. The styling kept the focus on the saree's sculptural fall and the jewellery's depth, with no competing flourishes.",
         ],
-        verdict: "The thesis statement of the night.",
+        verdict: "Heritage, weighed in carats and conviction.",
       },
       {
         number: "Look 02",
         name: "Simone Ashley",
-        wearing: "In Sabyasachi, with Bulgari emeralds",
-        image: metLook02,
+        wearing: "In custom Stella McCartney",
+        image: metSimoneAshley,
         paragraphs: [
-          "Ashley has been quietly cultivating one of the more interesting style arcs in the British-Indian crossover lane, and her choice of a Sabyasachi gown — black velvet, with antique-silver zardozi running the length of a side-swept train — felt like a deliberate handing-over of credit. The silhouette was distinctly Western, the language entirely subcontinental. Emeralds at the throat, a low chignon, no other ornamentation.",
-          "It was the kind of look that doesn't try to be the photograph of the night. It just becomes one anyway.",
+          "On her third Met outing, Ashley arrived in a \"naked look\" gown by Stella McCartney constructed entirely from draped silver chains — a piece that read, on first glance, as the simplest thing on the carpet, and on the second, as one of the most technically considered. The chains followed the body without restricting it, catching the flashbulbs in a way that made the silhouette shift with every angle.",
+          "For an actor whose previous Met appearances have leaned into colour and silhouette, the choice felt like a deliberate de-escalation. A clean idea, executed with absolute confidence.",
         ],
         verdict: "Restraint as a flex.",
       },
       {
         number: "Look 03",
         name: "Karan Johar",
-        wearing: "In Manish Malhotra, with vintage cufflinks",
-        image: metLook03,
+        wearing: "In custom Manish Malhotra",
+        image: metKaranJohar,
         paragraphs: [
-          "Johar arrived in a tuxedo that read as a love letter to old Bombay tailoring — a long-line silk-blend jacket in midnight ink, with hand-stitched lapels, worn over a high-collared kurta-style shirt. The detailing only revealed itself on the close-up: chikankari running along the placket, almost invisible until the flashbulbs caught it.",
-          "It was a look that understood the assignment of the Met without performing it. There was no costume here, just craftsmanship, and that distinction is increasingly rare on these steps.",
+          "Johar's debut was, in many ways, the loudest argument for Indian craft on the carpet this year. The Manish Malhotra ensemble — a cape, jacket, and trousers — drew directly from the work of Raja Ravi Varma, with hand-painted motifs, traditional zardozi borders, three-dimensional pillar detailing, and embroidered lotuses and swans worked into the piece. The atelier reportedly logged more than 5,600 hours on the look. Even the lining of the jacket was hand-painted.",
+          "It was a debut as thesis statement: not Indian fashion translated for an international audience, but Indian fashion presented at full volume and asked to be met on its own terms.",
         ],
-        verdict: "A masterclass in how to wear, not perform.",
+        verdict: "A debut that arrived as a manifesto.",
       },
       {
         number: "Look 04",
-        name: "Diljit Dosanjh",
-        wearing: "In Prabal Gurung, with a custom Punjabi-script kalgi",
-        image: metLook04,
+        name: "Sudha Reddy",
+        wearing: "In custom Manish Malhotra, with personal-collection jewels",
+        image: metSudhaReddy,
         paragraphs: [
-          "If anyone was going to commit to the carpet this year, it was always going to be Dosanjh. The look — a champagne sherwani in raw silk, with chevron-cut bullion embroidery running from shoulder to hem — was paired with a turban set with a kalgi inscribed in Gurmukhi script. He brought his own iconography and made the Gala meet him halfway.",
-          "The crowd noticed. The cameras noticed. The choice to lean into a regional Punjabi visual grammar, rather than a pan-Indian one, was the most quietly radical statement of the evening.",
+          "Reddy's \"Tree of Life\" gown, designed by Manish Malhotra, was the result of 3,459 hours of work by ninety artisans. It opened with a royal blue velvet corset embroidered in antique gold, then unfurled into a seven-metre train hand-painted in the Machilipatnam Kalamkari tradition, threading in motifs of Palapitta, Jammi Chettu, Kalpavriksha, Surya and Chandra — a near-encyclopaedic homage to South Indian iconography.",
+          "The jewellery, styled by Mariel Haenn and drawn entirely from Reddy's private collection, was the talking point: the \"Queen of Merelani,\" a 550-carat tanzanite, anchored a suite valued at over fifteen million dollars. Maximalism, but built on a clear architectural logic.",
         ],
-        verdict: "Specificity beats spectacle.",
+        verdict: "A regional grammar, scaled up to global volume.",
       },
       {
         number: "Look 05",
-        name: "Sawai Padmanabh Singh ('Pacho')",
-        wearing: "In custom Raghavendra Rathore, with heritage jewels from the House of Jaipur",
-        image: metLook05,
+        name: "Sawai Padmanabh Singh",
+        wearing: "In a velvet coat layered over traditional silhouettes",
+        image: metSawaiPadmanabh,
         paragraphs: [
-          "The Maharaja of Jaipur has the easiest visual brief in the room and the hardest creative one: he has to make heritage look contemporary without diluting either. He did it cleanly this year. A bandhgala in deep oxblood velvet, with a high collar, paired with churidars and a single emerald sarpech that had reportedly not left the family treasury in three decades.",
-          "There was something almost stubborn about the simplicity of it. He wasn't competing with the carpet. He was reminding it that some silhouettes don't need to be reinvented.",
+          "The Maharaja of Jaipur arrived in the look that the rest of the carpet was, in a sense, competing with: heritage worn correctly. A long velvet coat sat over a more traditional silhouette beneath, the layering doing the work of fusing the contemporary cut with the older language he carries naturally. There was no flourish, no statement piece reaching for attention.",
+          "The instinct to under-style was the right one. He was photographed alongside his sister, and the two together made one of the cleaner royal images of the night.",
         ],
         verdict: "Inheritance, worn correctly.",
       },
       {
         number: "Look 06",
         name: "Gauravi Kumari",
-        wearing: "In Tarun Tahiliani, with Jaipur Gems",
-        image: metLook06,
+        wearing: "In her grandmother Gayatri Devi's vintage chiffon saree, reworked as a gown",
+        image: metGauravi,
         paragraphs: [
-          "The Princess of Jaipur made her Met debut in a gown that read as a conversation between two cities — a pale-bone bustier in draped tulle, with an embroidered overlay that nodded to the frescoes of the City Palace, and a sweeping train that pooled like watered silk. The styling was deliberately youthful: minimal jewellery, an unfussy half-up, no statement clutch.",
-          "For a first appearance, it was remarkably unshowy. She let the dress do the work, which is exactly what you want a debut to do.",
+          "The Princess of Jaipur made her Met debut in a piece that was, in every meaningful sense, an heirloom. She wore her grandmother Gayatri Devi's vintage chiffon saree, transformed for the evening into a fluid gown — a styling decision that preserved the original textile's softness while letting it move as a contemporary silhouette.",
+          "The reference was not subtle, but it didn't need to be. Gayatri Devi remains one of the most photographed women of the twentieth century, and walking the Met in her saree was both a tribute and a thesis. Heritage as the actual material of the dress, not merely its inspiration.",
         ],
         verdict: "A debut handled with poise.",
       },
       {
         number: "Look 07",
         name: "Natasha Poonawalla",
-        wearing: "In Iris van Herpen couture, with a custom Sabyasachi headpiece",
-        image: metLook07,
+        wearing: "In a Marc Quinn sculpture with Dolce & Gabbana couture",
+        image: metNatashaPoonawalla,
         paragraphs: [
-          "Poonawalla has become something of a Met Gala specialist — the person whose look you scroll for first — and this year she did not under-deliver. The dress was a sculptural Iris van Herpen piece in liquid indigo, all 3D-printed pleats radiating from a corseted core, but the headpiece was the surprise: a Sabyasachi crown in tarnished silver, set with uncut diamonds, that fused the futurist gown to something distinctly subcontinental.",
-          "It was the rare collaboration that didn't read as a collision. Both designers were audible.",
+          "If anyone took the \"Fashion Is Art\" brief literally, it was Poonawalla. The centrepiece of her look was the Orchid Pectoral, a sculptural piece by British artist Marc Quinn, designed specifically for her in lightweight high-tech materials and worn across the chest like an actual flower opening outward. Quinn described the piece as one that only fully comes alive when worn, with the body activating it rather than the plinth.",
+          "The Dolce & Gabbana couture beneath, crafted by the Alta Moda team, anchored the sculpture without competing with it. The effect was less an outfit than a deliberate collaboration between artist, wearer, and atelier — the closest thing the carpet had to a performance piece.",
         ],
-        verdict: "Two languages, one fluent sentence.",
+        verdict: "Living art, exactly as the theme intended.",
       },
       {
         number: "Look 08",
-        name: "Sudha Reddy",
-        wearing: "In Gaurav Gupta, with custom Forevermark diamonds",
-        image: metLook08,
+        name: "Manish Malhotra",
+        wearing: "In a self-designed bandhgala with a sculptural cape",
+        image: metManishMalhotra,
         paragraphs: [
-          "Reddy continues to be one of the more genuinely adventurous dressers on the Met circuit, and her Gaurav Gupta gown — molten plum, with a hand-sculpted thorax-style bodice and a tendril train that seemed to writhe behind her — was the kind of look that earned a second pass from every photographer on the line.",
-          "The diamond suite, set in pieces designed to echo the gown's organic spirals, lifted the whole thing from costume to couture. Maximalism with a structural logic.",
+          "The designer dressed three of the night's most-photographed women, but his own look was the quietest tribute on the carpet. The self-designed bandhgala was layered with a cape embroidered with the names of his Mumbai artisans — the people who had built the pieces he was sending down the steps. Architectural references to the Taj Mahal Palace Hotel, the Gateway of India, and Chhatrapati Shivaji Terminus ran through the embellishment, alongside motifs nodding to the city's trains and taxis.",
+          "He carried a measuring tape draped at the neck, a deliberate gesture toward the workshop. The look was, in effect, a moving credit line — Malhotra refusing to separate the designer from the people behind the design.",
         ],
-        verdict: "Drama, but engineered.",
+        verdict: "The designer as a love letter to his workshop.",
       },
       {
         number: "Look 09",
-        name: "Manish Malhotra",
-        wearing: "In a self-designed bandhgala, with archival pieces",
-        image: metLook09,
+        name: "Ananya Birla",
+        wearing: "In custom Robert Wun couture, with a sculptural mask",
+        image: metAnanya,
         paragraphs: [
-          "The designer arrived dressed in his own grammar — a long bandhgala in inky burgundy, with mirror-work running along the cuffs and a single antique brooch at the collar. Malhotra has been quietly building his international visibility for years, and his presence on the steps this year felt less like a guest appearance and more like a homecoming for Indian couture itself.",
-          "He kept the look austere on purpose. The work, after all, was already on three other women on the carpet.",
+          "Birla's debut was easily the most discussed Indian arrival outside the established names — a custom Robert Wun couture look completed with a sculptural mask that read, depending on the angle, as either avant-garde sculpture or something closer to surrealist tableau. The internet, predictably, dissected the mask within minutes; the more serious read was that Birla had used her first Met appearance to make a deliberate, art-forward statement rather than a safe heritage play.",
+          "That she changed into a separate Harris Reed demi-couture look for the GQ after-party — a structured corset inspired by an M.F. Husain painting from her family's personal collection — only reinforced the night's argument. Birla treated the evening as a sustained piece of curation, not a single arrival.",
         ],
-        verdict: "The designer as a quiet sentence.",
+        verdict: "A debut that refused to play it safe.",
       },
       {
         number: "Look 10",
-        name: "Ananya Birla",
-        wearing: "In Rahul Mishra, with Cartier high jewellery",
-        image: metLook10,
+        name: "Diya Mehta Jatia",
+        wearing: "In custom Mayyur Girotra",
+        image: metDiya,
         paragraphs: [
-          "Birla's Rahul Mishra gown was, in some ways, the most technically ambitious piece on the carpet — a midnight-navy creation with three-dimensional embroidered florals that ran from the shoulder to the hem in a controlled riot, each blossom hand-finished. The work was the entire point of the look, and she wore it with the stillness that lets that kind of craftsmanship be seen.",
-          "Cartier provided a discreet diamond cuff, an emerald drop, and not much else. The dress, sensibly, was not asked to share the frame.",
+          "The fashion consultant's debut was the look most explicitly built around a single craft tradition. The Mayyur Girotra ensemble was designed as what she described as a hardcore India story, structured around Shola — the endangered pith-craft tradition from West Bengal, in which the soft inner core of the shola plant is hand-shaped into intricate sculptural detailing.",
+          "Most of the carpet's craft references this year were nationally familiar. This one was deliberately not. Choosing a regional, endangered tradition for a Met debut was the kind of bet that only works if the work itself can carry the weight, and here it did.",
         ],
-        verdict: "Couture in the literal sense.",
+        verdict: "A regional craft, handed the loudest stage available.",
       },
       {
         number: "Look 11",
-        name: "Diya Mehta",
-        wearing: "In Falguni Shane Peacock, with antique kundan",
-        image: metLook11,
-        paragraphs: [
-          "Mehta arrived in something genuinely surprising — a metallic-gold gown with a high mandarin collar and a fully embellished skirt that moved like chainmail, paired with antique kundan earrings that grounded the look in something older. The styling read as a deliberate break from the lehenga-and-saree route most of her contemporaries take to the steps.",
-          "It was a gamble, and it paid. She looked, for the entire length of the carpet, like she belonged on it.",
-        ],
-        verdict: "A risk taken cleanly.",
-      },
-      {
-        number: "Look 12",
         name: "Bhavitha Mandava",
-        wearing: "In Amit Aggarwal, with custom Tanishq jewels",
-        image: metLook12,
+        wearing: "In Chanel",
+        image: metBhavitha,
         paragraphs: [
-          "Mandava closed the Indian contingent in an Amit Aggarwal gown that was, on first glance, almost shockingly minimal — a pale-ivory column in metallic-blended fabric, with the designer's signature ribbon work running in a single diagonal from shoulder to knee. It was the kind of look that rewarded a closer photograph; the texture only revealed itself in flash.",
-          "Paired with a polki choker that softened the futurism, it was a debut that suggested patience. She arrived without trying to arrive, which is the trick of these steps.",
+          "Mandava's debut was, on first viewing, the most polarising look the Indian contingent put forward — a Chanel ensemble that read, to a casual eye, as a jeans-and-top combination on a carpet built for spectacle. The discourse online was instant and unkind. The actual construction was more interesting: a trompe-l'oeil couture piece engineered to look casual, with the denim and the top both built from embellishment-grade fabrics designed to mimic something deliberately ordinary.",
+          "Read against the theme — fashion as art — the gesture was sharper than the social-media response suggested. Mandava framed it as a tribute to her own journey in the industry. A debut that knew exactly what it was doing, even when the room briefly didn't.",
         ],
-        verdict: "Quiet, but cleanly heard.",
+        verdict: "A debut sharper than its first read.",
       },
     ],
     pullQuote:
       "If there was a through-line this year, it was that the Indian contingent had stopped translating themselves. Nobody on those steps was explaining their references.",
     outro: [
-      "Twelve looks, twelve different conversations with the carpet. What was striking, taken together, was how little of the evening was spent in translation. A decade ago, an Indian designer at the Met was a footnote; five years ago, a curiosity; this year, a working assumption. The steps absorbed sherwanis, saris, kundan, kalgis, and sculptural couture without anyone pausing to caption them.",
-      "That shift — from explanation to fluency — is the actual story. The clothes are extraordinary, but extraordinary clothes have always shown up. What's new is the confidence with which they arrived, and the equally striking confidence with which the room received them.",
-      "Next year's theme has not yet been announced. On the available evidence, the Indian contingent will be ready before the rest of us are.",
+      "Eleven looks, eleven different conversations with the carpet. What was striking, taken together, was how little of the evening was spent in translation. A decade ago, an Indian designer at the Met was a footnote; five years ago, a curiosity; this year, a working assumption. The steps absorbed sarees, sherwanis, Kalamkari, Pichwai, Shola, vintage chiffon, and one full sculptural pectoral without anyone pausing to caption them.",
+      "That shift — from explanation to fluency — is the actual story. The clothes were extraordinary, but extraordinary clothes have always shown up. What's new is the confidence with which they arrived, and the equally striking confidence with which the room received them.",
+      "Next year's theme has not yet been announced. On the available evidence, the Indian contingent will be ready before the rest of us.",
     ],
   },
   {
