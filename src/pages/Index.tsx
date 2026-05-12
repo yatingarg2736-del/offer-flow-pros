@@ -7,13 +7,12 @@ import Travel from "@/components/Travel";
 import HowItWorks from "@/components/HowItWorks";
 import Partners from "@/components/Partners";
 import AboutTeam from "@/components/AboutTeam";
+import PartnerDeals from "@/components/PartnerDeals";
 import ContactForms from "@/components/ContactForms";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import EmailPopup from "@/components/EmailPopup";
-
-const SITE_URL = "https://couponminty.com";
-
+const SITE_URL = "https://www.couponminty.com";
 const jsonLd = [
   {
     "@context": "https://schema.org",
@@ -76,7 +75,6 @@ const jsonLd = [
     ],
   },
 ];
-
 const Index = () => {
   return (
     <main className="min-h-screen bg-background">
@@ -96,11 +94,11 @@ const Index = () => {
       <HowItWorks />
       <Partners />
       <AboutTeam />
+      <PartnerDeals />
       <ContactForms />
       <Footer />
       <EmailPopup />
     </main>
   );
 };
-
 export default Index;
