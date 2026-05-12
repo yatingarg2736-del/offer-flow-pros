@@ -4,7 +4,7 @@ import valentine from "@/assets/blog-valentine.webp";
 import streetwear from "@/assets/blog-streetwear.webp";
 import health from "@/assets/blog-health.webp";
 import wellness from "@/assets/blog-wellness.webp";
-import metgala from "@/assets/blog-metgala-hero.jpg";
+import metgala from "@/assets/metgala/hero.jpeg";
 import metIshaAmbani from "@/assets/metgala/isha-ambani.jpeg";
 import metSimoneAshley from "@/assets/metgala/simone-ashley.jpeg";
 import metKaranJohar from "@/assets/metgala/karan-johar.jpeg";
@@ -12,10 +12,10 @@ import metSudhaReddy from "@/assets/metgala/sudha-reddy.jpeg";
 import metSawaiPadmanabh from "@/assets/metgala/sawai-padmanabh-singh.jpeg";
 import metNatashaPoonawalla from "@/assets/metgala/natasha-poonawalla.jpeg";
 import metManishMalhotra from "@/assets/metgala/manish-malhotra.jpeg";
-import metGauravi from "@/assets/metgala/look-06.jpg";
-import metAnanya from "@/assets/metgala/look-09.jpg";
-import metDiya from "@/assets/metgala/look-10.jpg";
-import metBhavitha from "@/assets/metgala/look-11.jpg";
+import metGauravi from "@/assets/metgala/gauravi-kumari.jpeg";
+import metAnanya from "@/assets/metgala/ananya-birla.jpeg";
+import metDiya from "@/assets/metgala/diya-mehta-jatia.jpeg";
+import metBhavitha from "@/assets/metgala/bhavitha-mandava.jpeg";
 
 export type BlogProduct = { name: string; price: string; cb: string; url: string };
 
