@@ -98,6 +98,8 @@ const jsonLd = {
   ],
 };
 
+const BANNER = "https://m.media-amazon.com/images/G/31/img23/Events/GSS/2024/GW/Phase2/PC_Hero_3000x1200._CB600000000_.jpg";
+
 const AmazonSummerSale2026 = () => {
   const scrollToSection = (id: string) => {
     const el = document.getElementById(id);
@@ -127,17 +129,23 @@ const AmazonSummerSale2026 = () => {
               All articles
             </Link>
           </div>
-          <div className="mx-auto mt-6 max-w-3xl overflow-hidden rounded-2xl">
+
+          <div className="mx-auto mt-6 max-w-3xl overflow-hidden rounded-2xl bg-orange-500" style={{ height: "280px" }}>
             <img
-              src="https://m.media-amazon.com/images/G/31/img24/Events/GSS/2025/GW/GSS25_PC_Hero_3000x1200._CB555458791_.jpg"
-              alt="Amazon Great Summer Sale 2026"
+              src={BANNER}
+              alt="Amazon Great Summer Sale 2026 — Up to 75% Off"
+              className="w-full h-full object-cover"
               onError={(e) => {
-                (e.target as HTMLImageElement).src = "https://images-eu.ssl-images-amazon.com/images/G/31/img22/Events/GSS/Homepage/PC_Hero._CB557123456_.jpg";
+                const el = e.target as HTMLImageElement;
+                el.style.display = "none";
+                const parent = el.parentElement;
+                if (parent) {
+                  parent.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;height:100%;flex-direction:column;gap:12px"><div style="background:white;color:#f97316;font-size:28px;font-weight:900;padding:16px 32px;border-radius:12px;letter-spacing:-1px">amazon</div><div style="color:white;font-size:18px;font-weight:700">Great Summer Sale 2026 — Up to 75% Off</div></div>';
+                }
               }}
-              className="w-full object-cover"
-              style={{ height: "300px" }}
             />
           </div>
+
           <span className="mt-6 inline-block rounded-full bg-accent px-3 py-1 text-xs font-bold uppercase tracking-wider text-accent-foreground">
             Amazon Sale
           </span>
