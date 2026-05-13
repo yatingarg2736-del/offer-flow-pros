@@ -92,7 +92,7 @@ const BlogPost = () => {
             height={720}
             loading="lazy"
             decoding="async"
-            className="h-full w-full object-cover"
+            className="h-full w-full object-contain"
           />
         </div>
       </section>
@@ -123,7 +123,7 @@ const BlogPost = () => {
                     height={1024}
                     loading="lazy"
                     decoding="async"
-                    className="h-full w-full object-cover"
+                    className="h-full w-full object-contain"
                   />
                   <span className="absolute bottom-3 left-4 rounded-full bg-black/50 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-widest text-white backdrop-blur-sm">
                     {look.name} · {look.number}
