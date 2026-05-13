@@ -9,7 +9,7 @@ interface SEOProps {
   jsonLd?: Record<string, unknown> | Record<string, unknown>[];
 }
 
-const SITE_URL = "https://couponminty.com";
+const SITE_URL = "https://www.couponminty.com";
 const DEFAULT_IMAGE = `${SITE_URL}/og-image.jpg`;
 
 const SEO = ({
@@ -25,7 +25,6 @@ const SEO = ({
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-
     <meta property="og:type" content={type} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
@@ -33,12 +32,10 @@ const SEO = ({
     <meta property="og:image" content={image} />
     <meta property="og:site_name" content="CouponMinty" />
     <meta property="og:locale" content="en_IN" />
-
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={image} />
-
     {jsonLd && (
       <script type="application/ld+json">
         {JSON.stringify(jsonLd)}
