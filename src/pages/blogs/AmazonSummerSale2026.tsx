@@ -34,17 +34,16 @@ const ProductCard = ({
   const handleClick = () => trackClick(name);
   return (
     <div className="group flex flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-card transition-all hover:-translate-y-1">
-      <div style={{ height: "220px", overflow: "hidden", background: "#1e293b", display: "flex", alignItems: "center", justifyContent: "center" }}>
-        <img
-          src={productImage}
-          alt={name}
-          loading="lazy"
-          onError={(e) => {
-            (e.target as HTMLImageElement).style.display = "none";
-          }}
-          style={{ width: "100%", height: "220px", objectFit: "contain", objectPosition: "center", padding: "12px" }}
-        />
-      </div>
+      <img
+        src={productImage}
+        alt={name}
+        loading="lazy"
+        onError={(e) => {
+          (e.target as HTMLImageElement).style.display = "none";
+        }}
+        className="w-full object-cover"
+        style={{ height: "220px" }}
+      />
       <div className="flex flex-1 flex-col p-6">
         <span className="w-fit rounded-full bg-emerald-100 px-2.5 py-1 text-xs font-bold text-emerald-700">
           Save up to {savePercent}
@@ -118,30 +117,37 @@ const AmazonSummerSale2026 = () => {
       <Navbar />
 
       <section className="bg-secondary/40">
-        <div className="container py-12 lg:py-16" style={{ textAlign: "center" }}>
-          <Link
-            to="/blog"
-            className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-accent"
-            style={{ justifyContent: "center" }}
-          >
-            <ArrowLeft className="h-4 w-4" />
-            All articles
-          </Link>
-
-          <div style={{ margin: "24px auto 20px", width: "120px", height: "120px", background: "#FF9900", borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center" }}>
-            <span style={{ color: "white", fontSize: "14px", fontWeight: "900", letterSpacing: "1px" }}>amazon</span>
+        <div className="container py-12 lg:py-16 text-center">
+          <div className="flex justify-center">
+            <Link
+              to="/blog"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-accent"
+            >
+              <ArrowLeft className="h-4 w-4" />
+              All articles
+            </Link>
           </div>
-
-          <span className="mt-2 inline-block rounded-full bg-accent px-3 py-1 text-xs font-bold uppercase tracking-wider text-accent-foreground">
+          <div className="mx-auto mt-6 max-w-3xl overflow-hidden rounded-2xl">
+            <img
+              src="https://m.media-amazon.com/images/G/31/img24/Events/GSS/2025/GW/GSS25_PC_Hero_3000x1200._CB555458791_.jpg"
+              alt="Amazon Great Summer Sale 2026"
+              onError={(e) => {
+                (e.target as HTMLImageElement).src = "https://images-eu.ssl-images-amazon.com/images/G/31/img22/Events/GSS/Homepage/PC_Hero._CB557123456_.jpg";
+              }}
+              className="w-full object-cover"
+              style={{ height: "300px" }}
+            />
+          </div>
+          <span className="mt-6 inline-block rounded-full bg-accent px-3 py-1 text-xs font-bold uppercase tracking-wider text-accent-foreground">
             Amazon Sale
           </span>
-          <h1 className="mt-4 text-3xl font-extrabold leading-tight text-primary md:text-4xl lg:text-5xl" style={{ maxWidth: "800px", margin: "16px auto 0" }}>
+          <h1 className="mt-4 mx-auto max-w-4xl text-3xl font-extrabold leading-tight text-primary md:text-4xl lg:text-5xl">
             10 Best Deals at Amazon India Great Summer Sale 2026 — Up to 75% Off
           </h1>
-          <p className="mt-5 text-lg leading-relaxed text-muted-foreground" style={{ maxWidth: "700px", margin: "20px auto 0" }}>
+          <p className="mt-5 mx-auto max-w-3xl text-lg leading-relaxed text-muted-foreground">
             From Ray-Ban Meta smart glasses to a Carrier 5-star AC — the deepest discounts on Amazon India right now, across tech, home and lifestyle.
           </p>
-          <div className="mt-5 flex flex-wrap items-center gap-4 text-sm text-muted-foreground" style={{ justifyContent: "center" }}>
+          <div className="mt-5 flex flex-wrap items-center justify-center gap-4 text-sm text-muted-foreground">
             <span className="inline-flex items-center gap-1.5">
               <User className="h-4 w-4" />
               CouponMinty Editors
@@ -155,7 +161,7 @@ const AmazonSummerSale2026 = () => {
               8 min read
             </span>
           </div>
-          <p className="mt-4 text-xs italic text-muted-foreground">
+          <p className="mt-4 mx-auto max-w-3xl text-xs italic text-muted-foreground">
             When you purchase through links on our site, we may earn an affiliate commission at no extra cost to you.
           </p>
         </div>
@@ -220,8 +226,8 @@ const AmazonSummerSale2026 = () => {
               savePercent="35%"
               brand="Samsung"
               name="Galaxy M56 5G"
-              salePrice="&#8377;21,998"
-              mrp="M.R.P. &#8377;33,999"
+              salePrice="Rs 21,998"
+              mrp="M.R.P. Rs 33,999"
               description="Flagship-grade Super AMOLED screen and cameras without flagship pricing. Long software support window."
               productImage="https://m.media-amazon.com/images/I/71cezbo2HNL._SL1500_.jpg"
               affiliateLink="https://amzn.to/4d8bjlI"
@@ -230,8 +236,8 @@ const AmazonSummerSale2026 = () => {
               savePercent="11%"
               brand="Apple"
               name="MacBook Neo 13 inch 2026"
-              salePrice="&#8377;61,990"
-              mrp="M.R.P. &#8377;69,900"
+              salePrice="Rs 61,990"
+              mrp="M.R.P. Rs 69,900"
               description="Current-generation MacBook under Rs 62k. Fanless, featherlight, full working day on a single charge."
               productImage="https://m.media-amazon.com/images/I/81TS5FnCq7L._SL1500_.jpg"
               affiliateLink="https://amzn.to/4nqNSHK"
@@ -240,8 +246,8 @@ const AmazonSummerSale2026 = () => {
               savePercent="57%"
               brand="Coway"
               name="Airmega Air Purifier"
-              salePrice="&#8377;14,999"
-              mrp="M.R.P. &#8377;34,900"
+              salePrice="Rs 14,999"
+              mrp="M.R.P. Rs 34,900"
               description="HEPA-grade filtration for Indian summer dust and pollen. Quietly competent without dominating a room."
               productImage="https://m.media-amazon.com/images/I/91mE+0CCnGL._SL1500_.jpg"
               affiliateLink="https://amzn.to/4tyQ4OR"
@@ -250,8 +256,8 @@ const AmazonSummerSale2026 = () => {
               savePercent="39%"
               brand="Sony"
               name="BRAVIA Smart LED TV 55 inches"
-              salePrice="&#8377;60,990"
-              mrp="M.R.P. &#8377;99,900"
+              salePrice="Rs 60,990"
+              mrp="M.R.P. Rs 99,900"
               description="4K picture, Google TV built in. Motion handling perfect for IPL matches and Saturday-night movies."
               productImage="https://m.media-amazon.com/images/I/81Vs1ZXn43L._SL1500_.jpg"
               affiliateLink="https://amzn.to/4tugYHu"
@@ -274,8 +280,8 @@ const AmazonSummerSale2026 = () => {
               savePercent="70%"
               brand="boAt"
               name="Stone 352 Pro Bluetooth Speaker"
-              salePrice="&#8377;1,499"
-              mrp="M.R.P. &#8377;4,990"
+              salePrice="Rs 1,499"
+              mrp="M.R.P. Rs 4,990"
               description="IPX7 waterproof, punchy bass, battery life that outlasts a pool afternoon. Steepest percentage discount on the list."
               productImage="https://m.media-amazon.com/images/I/81bNiiPk68L._SL1500_.jpg"
               affiliateLink="https://amzn.to/4uP0viq"
@@ -284,8 +290,8 @@ const AmazonSummerSale2026 = () => {
               savePercent="25%"
               brand="Ray-Ban"
               name="Meta Gen 1 Smart AI Glasses"
-              salePrice="&#8377;22,425"
-              mrp="M.R.P. &#8377;29,900"
+              salePrice="Rs 22,425"
+              mrp="M.R.P. Rs 29,900"
               description="Built-in camera, open-ear speakers, Meta AI assistant. Iconic Wayfarer shape — looks like glasses you would already own."
               productImage="https://m.media-amazon.com/images/I/615dfenwW7L._SL1500_.jpg"
               affiliateLink="https://amzn.to/433DuMu"
@@ -294,8 +300,8 @@ const AmazonSummerSale2026 = () => {
               savePercent="38%"
               brand="Carrier"
               name="2 Ton 5 Star Split AC"
-              salePrice="&#8377;56,990"
-              mrp="M.R.P. &#8377;91,690"
+              salePrice="Rs 56,990"
+              mrp="M.R.P. Rs 91,690"
               description="Five-star rated, 2-ton for larger rooms. Installation bundled. Stack bank offers for lowest final price."
               productImage="https://m.media-amazon.com/images/I/812QVASFvEL._SL1500_.jpg"
               affiliateLink="https://amzn.to/3RkJhuy"
@@ -314,8 +320,8 @@ const AmazonSummerSale2026 = () => {
               savePercent="39%"
               brand="Khadi Natural"
               name="Neem and Tea Tree Herbal Face Wash"
-              salePrice="&#8377;182"
-              mrp="M.R.P. &#8377;299"
+              salePrice="Rs 182"
+              mrp="M.R.P. Rs 299"
               description="Gentle formula for oily summer skin. Neem and tea tree do the heavy lifting. Stock up while under Rs 200."
               productImage="https://m.media-amazon.com/images/I/71NgF3NMj2L._SL1500_.jpg"
               affiliateLink="https://amzn.to/4wvFQ4A"
@@ -324,8 +330,8 @@ const AmazonSummerSale2026 = () => {
               savePercent="82%"
               brand="SALTY"
               name="Anti-Tarnish Jewellery Gift Box for Women"
-              salePrice="&#8377;361"
-              mrp="M.R.P. &#8377;1,999"
+              salePrice="Rs 361"
+              mrp="M.R.P. Rs 1,999"
               description="Biggest percentage discount in the round-up. Survives sweat, humidity and sunscreen without tarnishing."
               productImage="https://m.media-amazon.com/images/I/71lb9a2xC1L._SY625_.jpg"
               affiliateLink="https://amzn.to/4u6soCh"
@@ -334,8 +340,8 @@ const AmazonSummerSale2026 = () => {
               savePercent="78%"
               brand="Amazon Basics"
               name="10000mAh 20W Fast Charging Power Bank"
-              salePrice="&#8377;1,299"
-              mrp="M.R.P. &#8377;5,999"
+              salePrice="Rs 1,299"
+              mrp="M.R.P. Rs 5,999"
               description="20W fast charging, two full phone top-ups. Keep one in every bag at this price."
               productImage="https://m.media-amazon.com/images/I/6161YZ3YNdL._SL1500_.jpg"
               affiliateLink="https://amzn.to/4uQ7FTz"
