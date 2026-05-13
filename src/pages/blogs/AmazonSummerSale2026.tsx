@@ -16,6 +16,12 @@ interface ProductCardProps {
   affiliateLink: string;
 }
 
+const trackClick = (name: string) => {
+  const dl = (window as any).dataLayer || [];
+  (window as any).dataLayer = dl;
+  dl.push({ event: "affiliate_click", brand_name: name, source: "blog_amazon_summer_sale" });
+};
+
 const ProductCard = ({ savePercent, brand, name, salePrice, mrp, description, productImage, affiliateLink }: ProductCardProps) => (
   <div className="group flex flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-card transition-all hover:-translate-y-1 hover:shadow-elegant">
     <img
@@ -40,15 +46,12 @@ const ProductCard = ({ savePercent, brand, name, salePrice, mrp, description, pr
       <Button
         asChild
         className="mt-5 w-full bg-accent-gradient text-accent-foreground hover:opacity-90"
+        onClick={() => trackClick(name)}
       >
         
           href={affiliateLink}
           target="_blank"
           rel="nofollow sponsored noopener noreferrer"
-          onClick={() => {
-            (window as any).dataLayer = (window as any).dataLayer || [];
-            (window as any).dataLayer.push({ event: "affiliate_click", brand_name: name, source: "blog_amazon_summer_sale" });
-          }}
         >
           Shop on Amazon <ExternalLink className="ml-1 h-4 w-4" />
         </a>
@@ -178,7 +181,7 @@ const AmazonSummerSale2026 = () => {
                   onClick={() => scrollToSection(item.href)}
                   className="text-left text-sm font-medium text-primary underline-offset-4 hover:text-accent hover:underline"
                 >
-                  → {item.label}
+                  {item.label}
                 </button>
               </li>
             ))}
@@ -216,7 +219,7 @@ const AmazonSummerSale2026 = () => {
             <ProductCard
               savePercent="11%"
               brand="Apple"
-              name="MacBook Neo 13″ (2026)"
+              name="MacBook Neo 13 inch (2026)"
               salePrice="₹61,990"
               mrp="M.R.P. ₹69,900"
               description="Current-generation MacBook under ₹62k. Fanless, featherlight, full working day on a single charge."
@@ -236,7 +239,7 @@ const AmazonSummerSale2026 = () => {
             <ProductCard
               savePercent="39%"
               brand="Sony"
-              name="BRAVIA Smart LED TV (55 inches)"
+              name="BRAVIA Smart LED TV 55 inches"
               salePrice="₹60,990"
               mrp="M.R.P. ₹99,900"
               description="4K picture, Google TV built in. Motion handling perfect for IPL matches and Saturday-night movies."
@@ -248,7 +251,7 @@ const AmazonSummerSale2026 = () => {
 
         {/* PULL QUOTE */}
         <blockquote className="mt-14 border-l-4 border-accent bg-secondary/40 px-6 py-6 text-xl font-semibold italic leading-snug text-primary md:text-2xl">
-          &quot;The deepest discounts aren&apos;t always on the noisiest products — they&apos;re on the ones you&apos;ll actually use every day.&quot;
+          The deepest discounts are not always on the noisiest products — they are on the ones you will actually use every day.
         </blockquote>
 
         {/* SECTION 2 — SWEET-SPOT PICKS */}
@@ -272,7 +275,7 @@ const AmazonSummerSale2026 = () => {
             <ProductCard
               savePercent="25%"
               brand="Ray-Ban"
-              name="Meta (Gen 1) Smart AI Glasses"
+              name="Meta Gen 1 Smart AI Glasses"
               salePrice="₹22,425"
               mrp="M.R.P. ₹29,900"
               description="Built-in camera, open-ear speakers, Meta AI assistant. Iconic Wayfarer shape — looks like glasses you would already own."
@@ -292,10 +295,10 @@ const AmazonSummerSale2026 = () => {
           </div>
         </section>
 
-        {/* SECTION 3 — UNDER ₹2K WINS */}
+        {/* SECTION 3 — UNDER 2K WINS */}
         <section id="under-2k-wins" className="mt-14 scroll-mt-24">
           <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground">08 — 10</p>
-          <h2 className="mt-2 text-2xl font-extrabold text-primary md:text-3xl">The Under-₹2k Wins</h2>
+          <h2 className="mt-2 text-2xl font-extrabold text-primary md:text-3xl">The Under 2k Wins</h2>
           <p className="mt-2 text-muted-foreground">
             Three small buys with three of the steepest percentage discounts. No EMI math required.
           </p>
@@ -303,7 +306,7 @@ const AmazonSummerSale2026 = () => {
             <ProductCard
               savePercent="39%"
               brand="Khadi Natural"
-              name="Neem & Tea Tree Herbal Face Wash"
+              name="Neem and Tea Tree Herbal Face Wash"
               salePrice="₹182"
               mrp="M.R.P. ₹299"
               description="Gentle formula for oily summer skin. Neem and tea tree do the heavy lifting. Stock up while under ₹200."
@@ -341,7 +344,7 @@ const AmazonSummerSale2026 = () => {
               <p className="text-xs font-bold uppercase tracking-wider text-accent">Why Trust Us</p>
             </div>
             <p className="mt-3 text-base leading-relaxed text-foreground/85">
-              Every product in this round-up is a live deal from Amazon India&apos;s Great Summer Sale 2026, verified at time of publishing. Prices move during the sale window — what you see at checkout is the final word. Stack an HDFC Bank card, a Prime membership and an eligible exchange for the lowest possible final price.
+              Every product in this round-up is a live deal from Amazon India Great Summer Sale 2026, verified at time of publishing. Prices move during the sale window — what you see at checkout is the final word. Stack an HDFC Bank card, a Prime membership and an eligible exchange for the lowest possible final price.
             </p>
           </div>
         </section>
