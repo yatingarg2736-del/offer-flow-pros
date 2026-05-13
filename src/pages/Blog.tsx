@@ -173,6 +173,36 @@ const Blog = () => {
         </div>
 
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {/* Amazon Summer Sale 2026 — custom blog page */}
+          <Card className="group flex flex-col overflow-hidden border-border shadow-card transition-all hover:-translate-y-1 hover:shadow-elegant">
+            <Link to="/blog/amazon-great-summer-sale-2026" className="relative block aspect-[16/9] overflow-hidden bg-secondary">
+              <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-primary to-primary-glow">
+                <span className="text-3xl font-extrabold text-white/90">Amazon</span>
+              </div>
+              <span className="absolute left-4 top-4 rounded-full bg-accent px-3 py-1 text-xs font-bold uppercase tracking-wider text-accent-foreground">
+                Amazon Sale
+              </span>
+            </Link>
+            <CardContent className="flex flex-1 flex-col p-6">
+              <div className="flex items-center gap-4 text-xs text-muted-foreground">
+                <span className="inline-flex items-center gap-1"><Calendar className="h-3.5 w-3.5" /> May 13, 2026</span>
+                <span className="inline-flex items-center gap-1"><Clock className="h-3.5 w-3.5" /> 8 min read</span>
+              </div>
+              <h3 className="mt-3 text-lg font-bold text-primary transition-colors group-hover:text-accent">
+                <Link to="/blog/amazon-great-summer-sale-2026">10 Best Deals at Amazon India&apos;s Great Summer Sale 2026 — Up to 75% Off</Link>
+              </h3>
+              <p className="mt-2 text-sm text-muted-foreground">From Ray-Ban Meta smart glasses to a Carrier 5-star AC — the deepest discounts on Amazon India right now.</p>
+              <div className="mt-5 flex items-center justify-between border-t border-border pt-4">
+                <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-primary">
+                  <User className="h-3.5 w-3.5" /> CouponMinty Editors
+                </span>
+                <Button asChild variant="ghost" size="sm" className="text-accent hover:text-accent">
+                  <Link to="/blog/amazon-great-summer-sale-2026">Read <ArrowRight className="ml-1 h-3.5 w-3.5" /></Link>
+                </Button>
+              </div>
+            </CardContent>
+          </Card>
+
           {posts.map((p) => (
             <Card key={p.slug} className="group flex flex-col overflow-hidden border-border shadow-card transition-all hover:-translate-y-1 hover:shadow-elegant">
               <Link to={`/blog/${p.slug}`} className="relative block aspect-[16/9] overflow-hidden bg-secondary">
