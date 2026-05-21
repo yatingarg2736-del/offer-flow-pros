@@ -8,6 +8,7 @@ import Index from "./pages/Index.tsx";
 import Blog from "./pages/Blog.tsx";
 import BlogPost from "./pages/BlogPost.tsx";
 import AmazonSummerSale2026 from "./pages/blogs/AmazonSummerSale2026.tsx";
+import MyntraDeals from "./pages/MyntraDeals.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import PrivacyPolicy from "./pages/PrivacyPolicy.tsx";
 import Terms from "./pages/Terms.tsx";
