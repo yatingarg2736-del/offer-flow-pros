@@ -39,7 +39,8 @@ const Stores = () => (
             <Tag className="h-3 w-3" /> {s.deals} active deals
           </div>
         </a>
-      ))}
+        );
+      })}
     </div>
   </section>
 );
