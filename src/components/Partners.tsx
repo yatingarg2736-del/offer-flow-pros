@@ -34,12 +34,13 @@ import { withUtm } from "@/lib/affiliate";
 
 const Row = ({ reverse = false }: { reverse?: boolean }) => (
   <div className="flex gap-4 whitespace-nowrap animate-marquee" style={{ animationDirection: reverse ? "reverse" : "normal" }}>
-    {[...brands, ...brands].map((b, i) => (
+    {[...brands, ...brands].map((b, i) => {
+      const isMyntra = b.name === "Myntra";
+      return (
       <a
         key={i}
-        href={withUtm(b.url, "partners", b.name.toLowerCase().replace(/\s+/g, "-"))}
-        target="_blank"
-        rel="noopener noreferrer sponsored"
+        href={isMyntra ? "/myntra-deals" : withUtm(b.url, "partners", b.name.toLowerCase().replace(/\s+/g, "-"))}
+        {...(isMyntra ? {} : { target: "_blank", rel: "noopener noreferrer sponsored" })}
         title={`Visit ${b.name}`}
         className="inline-flex items-center gap-2.5 rounded-xl border border-border bg-card px-5 py-3 text-sm font-bold text-primary shadow-card transition-transform hover:-translate-y-0.5 hover:shadow-elegant"
       >
@@ -53,7 +54,8 @@ const Row = ({ reverse = false }: { reverse?: boolean }) => (
         />
         {b.name}
       </a>
-    ))}
+      );
+    })}
   </div>
 );
 
