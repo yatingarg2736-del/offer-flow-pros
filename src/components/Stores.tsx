@@ -11,12 +11,13 @@ const Stores = () => (
     </div>
 
     <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4">
-      {stores.map((s) => (
+      {stores.map((s) => {
+        const isMyntra = s.name === "Myntra";
+        return (
         <a
           key={s.name}
-          href={withUtm(s.url, "stores", s.name.toLowerCase())}
-          target="_blank"
-          rel="noopener noreferrer sponsored"
+          href={isMyntra ? "/myntra-deals" : withUtm(s.url, "stores", s.name.toLowerCase())}
+          {...(isMyntra ? {} : { target: "_blank", rel: "noopener noreferrer sponsored" })}
           title={`Shop ${s.name} & earn cashback`}
           className="group relative overflow-hidden rounded-2xl border border-border bg-card p-5 shadow-card transition-all hover:-translate-y-1 hover:shadow-elegant"
         >
@@ -38,7 +39,8 @@ const Stores = () => (
             <Tag className="h-3 w-3" /> {s.deals} active deals
           </div>
         </a>
-      ))}
+        );
+      })}
     </div>
   </section>
 );

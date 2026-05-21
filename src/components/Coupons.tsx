@@ -67,9 +67,8 @@ const Coupons = () => {
                   </Button>
                   <Button asChild size="sm" className="bg-accent-gradient text-accent-foreground hover:opacity-90">
                     <a
-                      href={withUtm(c.url, "coupons", c.code)}
-                      target="_blank"
-                      rel="noopener noreferrer sponsored"
+                      href={c.brand === "Myntra" ? "/myntra-deals" : withUtm(c.url, "coupons", c.code)}
+                      {...(c.brand === "Myntra" ? {} : { target: "_blank", rel: "noopener noreferrer sponsored" })}
                       aria-label={`Get ${c.brand} deal`}
                       onClick={() => handleCopy(c.code, c.brand)}
                     >
