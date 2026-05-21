@@ -26,6 +26,7 @@ const App = () => (
             <Route path="/" element={<Index />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/amazon-great-summer-sale-2026" element={<AmazonSummerSale2026 />} />
+            <Route path="/myntra-deals" element={<MyntraDeals />} />
             <Route path="/blog/:slug" element={<BlogPost />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/terms" element={<Terms />} />
