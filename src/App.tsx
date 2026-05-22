@@ -9,6 +9,7 @@ import Blog from "./pages/Blog.tsx";
 import BlogPost from "./pages/BlogPost.tsx";
 import AmazonSummerSale2026 from "./pages/blogs/AmazonSummerSale2026.tsx";
 import MyntraDeals from "./pages/MyntraDeals.tsx";
+import AmazonDeals from "./pages/AmazonDeals.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import PrivacyPolicy from "./pages/PrivacyPolicy.tsx";
 import Terms from "./pages/Terms.tsx";
@@ -27,6 +28,7 @@ const App = () => (
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/amazon-great-summer-sale-2026" element={<AmazonSummerSale2026 />} />
             <Route path="/myntra-deals" element={<MyntraDeals />} />
+            <Route path="/amazon-deals" element={<AmazonDeals />} />
             <Route path="/blog/:slug" element={<BlogPost />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/terms" element={<Terms />} />
