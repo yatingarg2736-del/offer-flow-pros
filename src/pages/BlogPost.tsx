@@ -167,7 +167,7 @@ const BlogPost = () => {
             <p className="text-xs font-bold uppercase tracking-wider text-accent">Featured products in this guide</p>
             <div className="mt-4 space-y-3">
               {post.products.map((p) => (
-                
+                <a
                   key={p.name}
                   href={withUtm(p.url, `blog-${post.slug}`, p.name.toLowerCase().replace(/\s+/g, "-"))}
                   target="_blank"
