@@ -16,8 +16,6 @@ const urls = [
   { loc: "/", pri: "1.0", freq: "daily", mod: today },
   { loc: "/blog", pri: "0.8", freq: "daily", mod: today },
   { loc: "/blog/amazon-great-summer-sale-2026", pri: "0.7", freq: "monthly", mod: today },
-  { loc: "/myntra-deals", pri: "0.8", freq: "daily", mod: today },
-  { loc: "/amazon-deals", pri: "0.8", freq: "daily", mod: today },
   { loc: "/privacy-policy", pri: "0.3", freq: "yearly", mod: today },
   { loc: "/terms", pri: "0.3", freq: "yearly", mod: today },
   ...slugs.map((s, i) => ({
