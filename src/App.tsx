@@ -10,15 +10,11 @@ import Index from "./pages/Index";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import AmazonSummerSale2026 from "./pages/blogs/AmazonSummerSale2026";
-import MyntraDeals from "./pages/MyntraDeals";
-import AmazonDeals from "./pages/AmazonDeals";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import Terms from "./pages/Terms";
 import NotFound from "./pages/NotFound";
 import { blogPosts } from "./lib/blogPosts";
-
 const queryClient = new QueryClient();
-
 const Root = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
@@ -28,7 +24,6 @@ const Root = () => (
     </TooltipProvider>
   </QueryClientProvider>
 );
-
 export const routes: RouteRecord[] = [
   {
     path: "/",
@@ -42,8 +37,6 @@ export const routes: RouteRecord[] = [
         Component: BlogPost,
         getStaticPaths: () => blogPosts.map((p) => `/blog/${p.slug}`),
       },
-      { path: "myntra-deals", Component: MyntraDeals },
-      { path: "amazon-deals", Component: AmazonDeals },
       { path: "privacy-policy", Component: PrivacyPolicy },
       { path: "terms", Component: Terms },
       { path: "*", Component: NotFound },
