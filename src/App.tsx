@@ -2,7 +2,6 @@
 // New blog posts auto-render from blogPosts.ts via getStaticPaths.
 import type { RouteRecord } from "vite-react-ssg";
 import { Outlet } from "react-router-dom";
-import { HelmetProvider } from "react-helmet-async";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { Toaster } from "@/components/ui/toaster";
@@ -21,15 +20,13 @@ import { blogPosts } from "./lib/blogPosts";
 const queryClient = new QueryClient();
 
 const Root = () => (
-  <HelmetProvider>
-    <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
-        <Toaster />
-        <Sonner />
-        <Outlet />
-      </TooltipProvider>
-    </QueryClientProvider>
-  </HelmetProvider>
+  <QueryClientProvider client={queryClient}>
+    <TooltipProvider>
+      <Toaster />
+      <Sonner />
+      <Outlet />
+    </TooltipProvider>
+  </QueryClientProvider>
 );
 
 export const routes: RouteRecord[] = [
