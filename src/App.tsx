@@ -1,44 +1,52 @@
-import { HelmetProvider } from "react-helmet-async";
+// ⚠️ SSG project — do not switch to BrowserRouter or createRoot.
+// New blog posts auto-render from blogPosts.ts via getStaticPaths.
+import type { RouteRecord } from "vite-react-ssg";
+import { Outlet } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { Toaster as Sonner } from "@/components/ui/sonner";
-import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import Index from "./pages/Index.tsx";
-import Blog from "./pages/Blog.tsx";
-import BlogPost from "./pages/BlogPost.tsx";
-import AmazonSummerSale2026 from "./pages/blogs/AmazonSummerSale2026.tsx";
-import MyntraDeals from "./pages/MyntraDeals.tsx";
-import AmazonDeals from "./pages/AmazonDeals.tsx";
-import NotFound from "./pages/NotFound.tsx";
-import PrivacyPolicy from "./pages/PrivacyPolicy.tsx";
-import Terms from "./pages/Terms.tsx";
+import { Toaster } from "@/components/ui/toaster";
+import { Toaster as Sonner } from "@/components/ui/sonner";
+import Index from "./pages/Index";
+import Blog from "./pages/Blog";
+import BlogPost from "./pages/BlogPost";
+import AmazonSummerSale2026 from "./pages/blogs/AmazonSummerSale2026";
+import MyntraDeals from "./pages/MyntraDeals";
+import AmazonDeals from "./pages/AmazonDeals";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import Terms from "./pages/Terms";
+import NotFound from "./pages/NotFound";
+import { blogPosts } from "./lib/blogPosts";
 
 const queryClient = new QueryClient();
 
-const App = () => (
-  <HelmetProvider>
-    <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
-        <Toaster />
-        <Sonner />
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/blog" element={<Blog />} />
-            <Route path="/blog/amazon-great-summer-sale-2026" element={<AmazonSummerSale2026 />} />
-            <Route path="/myntra-deals" element={<MyntraDeals />} />
-            <Route path="/amazon-deals" element={<AmazonDeals />} />
-            <Route path="/blog/:slug" element={<BlogPost />} />
-            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-            <Route path="/terms" element={<Terms />} />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </BrowserRouter>
-      </TooltipProvider>
-    </QueryClientProvider>
-  </HelmetProvider>
+const Root = () => (
+  <QueryClientProvider client={queryClient}>
+    <TooltipProvider>
+      <Toaster />
+      <Sonner />
+      <Outlet />
+    </TooltipProvider>
+  </QueryClientProvider>
 );
 
-export default App;
+export const routes: RouteRecord[] = [
+  {
+    path: "/",
+    element: <Root />,
+    children: [
+      { index: true, Component: Index },
+      { path: "blog", Component: Blog },
+      { path: "blog/amazon-great-summer-sale-2026", Component: AmazonSummerSale2026 },
+      {
+        path: "blog/:slug",
+        Component: BlogPost,
+        getStaticPaths: () => blogPosts.map((p) => `/blog/${p.slug}`),
+      },
+      { path: "myntra-deals", Component: MyntraDeals },
+      { path: "amazon-deals", Component: AmazonDeals },
+      { path: "privacy-policy", Component: PrivacyPolicy },
+      { path: "terms", Component: Terms },
+      { path: "*", Component: NotFound },
+    ],
+  },
+];
