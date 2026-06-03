@@ -1,7 +1,6 @@
 import { withUtm } from "@/lib/affiliate";
 import { stores, logoFor } from "@/lib/dealsData";
 import { Tag } from "lucide-react";
-
 const Stores = () => (
   <section id="stores" aria-labelledby="stores-heading" className="container py-20">
     <div className="mb-12 flex flex-col items-center text-center">
@@ -9,15 +8,13 @@ const Stores = () => (
       <h2 id="stores-heading" className="mt-3 text-3xl font-extrabold text-primary md:text-4xl">Earn cashback at India&apos;s biggest stores</h2>
       <p className="mt-3 max-w-2xl text-muted-foreground">Direct partnerships with 1,500+ MNCs. Every purchase earns you guaranteed extra cashback.</p>
     </div>
-
     <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4">
-      {stores.map((s) => {
-        const internal = s.name === "Myntra" ? "/myntra-deals" : s.name === "Amazon" ? "/amazon-deals" : null;
-        return (
-        <a
+      {stores.map((s) => (
+        
           key={s.name}
-          href={internal ?? withUtm(s.url, "stores", s.name.toLowerCase())}
-          {...(internal ? {} : { target: "_blank", rel: "noopener noreferrer sponsored" })}
+          href={withUtm(s.url, "stores", s.name.toLowerCase())}
+          target="_blank"
+          rel="noopener noreferrer sponsored"
           title={`Shop ${s.name} & earn cashback`}
           className="group relative overflow-hidden rounded-2xl border border-border bg-card p-5 shadow-card transition-all hover:-translate-y-1 hover:shadow-elegant"
         >
@@ -39,10 +36,8 @@ const Stores = () => (
             <Tag className="h-3 w-3" /> {s.deals} active deals
           </div>
         </a>
-        );
-      })}
+      ))}
     </div>
   </section>
 );
-
 export default Stores;
