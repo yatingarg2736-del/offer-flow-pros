@@ -16,9 +16,7 @@ import metGauravi from "@/assets/metgala/gauravi-kumari.jpeg";
 import metAnanya from "@/assets/metgala/ananya-birla.jpeg";
 import metDiya from "@/assets/metgala/diya-mehta-jatia.jpeg";
 import metBhavitha from "@/assets/metgala/bhavitha-mandava.jpeg";
-
 export type BlogProduct = { name: string; price: string; cb: string; url: string };
-
 export type BlogLook = {
   number: string;
   name: string;
@@ -27,7 +25,6 @@ export type BlogLook = {
   verdict: string;
   image: string;
 };
-
 export type BlogPost = {
   slug: string;
   title: string;
@@ -39,13 +36,12 @@ export type BlogPost = {
   image: string;
   highlights?: string[];
   products?: BlogProduct[];
-  content: string[]; // paragraphs
+  content: string[];
   looks?: BlogLook[];
   pullQuote?: string;
   outro?: string[];
   featured?: boolean;
 };
-
 export const blogPosts: BlogPost[] = [
   {
     slug: "met-gala-2026-india-took-the-steps",
@@ -53,7 +49,7 @@ export const blogPosts: BlogPost[] = [
     excerpt:
       "From a saree carrying 1,800 carats of diamonds to a sculptural orchid built by a contemporary artist, the Indian contingent turned this year's \"Fashion Is Art\" carpet into a working argument for craft, heritage, and the limits of restraint.",
     author: "Quill",
-    date: "May 5, 2026",
+    date: "2026-05-05",
     read: "11 min",
     tag: "Fashion",
     image: metgala,
@@ -204,7 +200,7 @@ export const blogPosts: BlogPost[] = [
     excerpt:
       "We tested 30 plus skincare brands available in India and shortlisted the 5 most-loved names that pair clean ingredients with serious savings on CouponMinty.",
     author: "Priya Sharma",
-    date: "Apr 22, 2026",
+    date: "2026-04-22",
     read: "9 min",
     tag: "Beauty",
     image: skincare,
@@ -228,7 +224,7 @@ export const blogPosts: BlogPost[] = [
     excerpt:
       "Seven daily routines, backed by Indian doctors, that boost immunity and save you thousands on medical bills. Plus the best wellness brand offers this month.",
     author: "Dr. Ananya Iyer",
-    date: "Apr 18, 2026",
+    date: "2026-04-18",
     read: "7 min",
     tag: "Wellness",
     image: health,
@@ -248,7 +244,7 @@ export const blogPosts: BlogPost[] = [
     excerpt:
       "How a small Hyderabad-based label became India's most-talked-about streetwear brand, and how to grab their pieces with stacked CouponMinty cashback.",
     author: "Karan Mehta",
-    date: "Apr 15, 2026",
+    date: "2026-04-15",
     read: "8 min",
     tag: "Fashion",
     image: streetwear,
@@ -267,7 +263,7 @@ export const blogPosts: BlogPost[] = [
     excerpt:
       "A full breakdown of every running HyugaLife discount, bank offer and the extra 10 percent cashback you only get through CouponMinty.",
     author: "Neha Kapoor",
-    date: "Apr 10, 2026",
+    date: "2026-04-10",
     read: "5 min",
     tag: "Wellness",
     image: wellness,
@@ -286,7 +282,7 @@ export const blogPosts: BlogPost[] = [
     excerpt:
       "From fashion to electronics, here are the verified Holi 2026 deals worth your money plus ready-to-copy codes from 40 plus top Indian brands.",
     author: "Rahul Verma",
-    date: "Mar 12, 2026",
+    date: "2026-03-12",
     read: "10 min",
     tag: "Festive",
     image: holi,
@@ -305,7 +301,7 @@ export const blogPosts: BlogPost[] = [
     excerpt:
       "Gifting ideas under ₹500, ₹1,000 and ₹2,500 with the highest cashback. Perfect for last-minute shoppers who still want to save.",
     author: "Aditya Rao",
-    date: "Feb 08, 2026",
+    date: "2026-02-08",
     read: "6 min",
     tag: "Festive",
     image: valentine,
@@ -324,7 +320,7 @@ export const blogPosts: BlogPost[] = [
     excerpt:
       "Earn from your blog, Telegram channel or YouTube. Here is exactly how to start, what tools to use, and how creators are making ₹50,000 plus a month.",
     author: "Neha Kapoor",
-    date: "Feb 02, 2026",
+    date: "2026-02-02",
     read: "11 min",
     tag: "Guides",
     image: skincare,
@@ -339,7 +335,6 @@ export const blogPosts: BlogPost[] = [
     ],
   },
 ];
-
 export const getPostBySlug = (slug: string) => blogPosts.find((p) => p.slug === slug);
 export const featuredPost = blogPosts.find((p) => p.featured) ?? blogPosts[0];
 export const otherPosts = blogPosts.filter((p) => !p.featured);
