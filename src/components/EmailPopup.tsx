@@ -8,7 +8,7 @@ const STORAGE_KEY = "cm_email_popup_shown_v1";
 const brands = [
   { name: "Amazon", url: "https://www.amazon.in" },
   { name: "Flipkart", url: "https://www.flipkart.com" },
-  { name: "Myntra", url: "https://www.myntra.com" },
+  { name: "Myntra", url: "https://track.vcommission.com/click?campaign_id=10882&pub_id=129716" },
   { name: "Nykaa", url: "https://www.nykaa.com" },
   { name: "Swiggy", url: "https://www.swiggy.com" },
   { name: "Ajio", url: "https://www.ajio.com" },
