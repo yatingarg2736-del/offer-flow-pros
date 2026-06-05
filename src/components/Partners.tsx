@@ -1,7 +1,7 @@
 const brands = [
   { name: "Amazon", url: "https://www.amazon.in" },
   { name: "Flipkart", url: "https://www.flipkart.com" },
-  { name: "Myntra", url: "https://www.myntra.com" },
+  { name: "Myntra", url: "https://track.vcommission.com/click?campaign_id=10882&pub_id=129716" },
   { name: "Ajio", url: "https://www.ajio.com" },
   { name: "Nykaa", url: "https://www.nykaa.com" },
   { name: "Tata CLiQ", url: "https://www.tatacliq.com" },

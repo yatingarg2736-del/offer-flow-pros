@@ -19,7 +19,7 @@ export type Coupon = {
 export const stores: Store[] = [
   { name: "Amazon", cb: "8%", deals: 142, url: "https://www.amazon.in", color: "from-amber-500 to-orange-500", category: "Shopping" },
   { name: "Flipkart", cb: "7.5%", deals: 128, url: "https://www.flipkart.com", color: "from-blue-500 to-indigo-600", category: "Shopping" },
-  { name: "Myntra", cb: "10%", deals: 96, url: "https://www.myntra.com", color: "from-pink-500 to-rose-500", category: "Fashion" },
+  { name: "Myntra", cb: "10%", deals: 96, url: "https://track.vcommission.com/click?campaign_id=10882&pub_id=129716", color: "from-pink-500 to-rose-500", category: "Fashion" },
   { name: "Ajio", cb: "12%", deals: 74, url: "https://www.ajio.com", color: "from-fuchsia-500 to-purple-600", category: "Fashion" },
   { name: "Nykaa", cb: "9%", deals: 88, url: "https://www.nykaa.com", color: "from-rose-500 to-red-500", category: "Beauty" },
   { name: "Swiggy", cb: "15%", deals: 52, url: "https://www.swiggy.com", color: "from-orange-500 to-amber-500", category: "Food" },
@@ -32,7 +32,7 @@ export const stores: Store[] = [
 ];
 
 export const coupons: Coupon[] = [
-  { brand: "Myntra", title: "Flat 70% OFF plus Extra 10% Cashback", code: "MINT70", tag: "Fashion", url: "https://www.myntra.com", expiry: "31 Dec 2026" },
+  { brand: "Myntra", title: "Flat 70% OFF plus Extra 10% Cashback", code: "MINT70", tag: "Fashion", url: "https://track.vcommission.com/click?campaign_id=10882&pub_id=129716", expiry: "31 Dec 2026" },
   { brand: "Amazon", title: "Up to ₹15,000 OFF on Smartphones", code: "DEALMINT", tag: "Electronics", url: "https://www.amazon.in", expiry: "30 Jun 2026" },
   { brand: "Swiggy", title: "60% OFF up to ₹120 plus 15% Cashback", code: "EATMINT", tag: "Food", url: "https://www.swiggy.com", expiry: "31 May 2026" },
   { brand: "Nykaa", title: "Min 40% OFF on Beauty plus 9% Cashback", code: "GLOWMINT", tag: "Beauty", url: "https://www.nykaa.com", expiry: "15 Jul 2026" },
