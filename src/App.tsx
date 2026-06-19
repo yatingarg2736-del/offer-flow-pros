@@ -10,6 +10,7 @@ import Index from "./pages/Index";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import AmazonSummerSale2026 from "./pages/blogs/AmazonSummerSale2026";
+import MuscleBlazeHealthPlan2026 from "./pages/blogs/MuscleBlazeHealthPlan2026";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import Terms from "./pages/Terms";
 import NotFound from "./pages/NotFound";
@@ -32,6 +33,7 @@ export const routes: RouteRecord[] = [
       { index: true, Component: Index },
       { path: "blog", Component: Blog },
       { path: "blog/amazon-great-summer-sale-2026", Component: AmazonSummerSale2026 },
+      { path: "blog/muscleblaze-health-plan-2026", Component: MuscleBlazeHealthPlan2026 },
       {
         path: "blog/:slug",
         Component: BlogPost,
