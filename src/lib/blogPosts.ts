@@ -2,7 +2,7 @@ import skincare from "@/assets/blog-skincare.webp";
 import holi from "@/assets/blog-holi.webp";
 import valentine from "@/assets/blog-valentine.webp";
 import streetwear from "@/assets/blog-streetwear.webp";
-import health from "@/assets/blog-health.webp";
+import muscleblaze from "@/assets/blog-muscleblaze.png";
 import wellness from "@/assets/blog-wellness.webp";
 import metgala from "@/assets/metgala/hero.jpeg";
 import metIshaAmbani from "@/assets/metgala/isha-ambani.jpeg";
