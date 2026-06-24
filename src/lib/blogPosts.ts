@@ -44,6 +44,19 @@ export type BlogPost = {
 };
 export const blogPosts: BlogPost[] = [
   {
+    slug: "muscleblaze-health-plan-2026",
+    title: "Why MuscleBlaze Belongs in Your Health Plan in 2026",
+    excerpt:
+      "India's most trusted sports-nutrition brand is running one of its biggest offers of the year - up to 60% off. Here is what makes MuscleBlaze worth building into your routine, and how to make the most of the deal.",
+    author: "Quill",
+    date: "2026-06-20",
+    read: "6 min",
+    tag: "Fitness",
+    image: health,
+    content: [],
+  },
+  {
+    
     slug: "met-gala-2026-india-took-the-steps",
     title: "Met Gala 2026: India Took the Steps",
     excerpt:
