@@ -5,10 +5,17 @@ import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight, Calendar, Clock, User, Tag, Star, Copy, Check, Scissors } from "lucide-react";
 import { Link } from "react-router-dom";
 import SEO from "@/components/SEO";
-import { useState } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { toast } from "@/hooks/use-toast";
 import { withUtm } from "@/lib/affiliate";
-import { featuredPost as featured, otherPosts as posts } from "@/lib/blogPosts";
+import { blogPosts } from "@/lib/blogPosts";
+
+// Featured carousel = every post marked featured: true (supports up to ~10 brands)
+const featuredPosts = blogPosts.filter((p) => p.featured);
+// Non-featured posts for the grid below
+const posts = blogPosts.filter((p) => !p.featured);
+
+const ROTATE_MS = 5000;
 
 const categories = ["All", "Cashback", "Tech", "Fashion", "Beauty", "Wellness", "Festive", "Guides"];
 
@@ -30,6 +37,21 @@ const logoFor = (url: string) => {
 
 const Blog = () => {
   const [copied, setCopied] = useState<string | null>(null);
+  const [active, setActive] = useState(0);
+  const [paused, setPaused] = useState(false);
+
+  const count = featuredPosts.length;
+
+  // Auto-rotate the featured carousel every ROTATE_MS, paused on hover
+  useEffect(() => {
+    if (count <= 1 || paused) return;
+    const id = setInterval(() => {
+      setActive((i) => (i + 1) % count);
+    }, ROTATE_MS);
+    return () => clearInterval(id);
+  }, [count, paused]);
+
+  const goTo = useCallback((i: number) => setActive(i), []);
 
   const copyCode = async (code: string, brand: string) => {
     try {
@@ -53,7 +75,7 @@ const Blog = () => {
           "@type": "Blog",
           name: "CouponMinty Blog",
           url: "https://couponminty.com/blog",
-          blogPost: [featured, ...posts].map((p) => ({
+          blogPost: [...featuredPosts, ...posts].map((p) => ({
             "@type": "BlogPosting",
             headline: p.title,
             author: { "@type": "Person", name: p.author },
@@ -92,7 +114,7 @@ const Blog = () => {
         </div>
       </section>
 
-      {/* FEATURED POST */}
+      {/* FEATURED CAROUSEL */}
       <section className="container py-16">
         <div className="mb-8 flex items-end justify-between">
           <div>
@@ -101,68 +123,105 @@ const Blog = () => {
           </div>
         </div>
 
-        <Card className="overflow-hidden border-border shadow-elegant">
-          <div className="grid lg:grid-cols-2">
-            <Link to={`/blog/${featured.slug}`} className="relative block bg-secondary">
-              <div className="aspect-[16/9] w-full overflow-hidden lg:h-full lg:aspect-auto">
-                <img
-                  src={featured.image}
-                  alt={featured.title}
-                  width={1280}
-                  height={720}
-                  loading="lazy"
-                  decoding="async"
-                  className="h-full w-full object-cover"
-                />
-              </div>
-              <span className="absolute left-4 top-4 rounded-full bg-accent px-3 py-1 text-xs font-bold uppercase tracking-wider text-accent-foreground">
-                {featured.tag}
-              </span>
-            </Link>
-            <CardContent className="flex flex-col justify-center p-8 lg:p-10">
-              <div className="flex flex-wrap items-center gap-4 text-xs text-muted-foreground">
-                <span className="inline-flex items-center gap-1"><Calendar className="h-3.5 w-3.5" /> {featured.date}</span>
-                <span className="inline-flex items-center gap-1"><Clock className="h-3.5 w-3.5" /> {featured.read}</span>
-                <span className="inline-flex items-center gap-1"><User className="h-3.5 w-3.5" /> {featured.author}</span>
-              </div>
-              <h3 className="mt-4 text-2xl font-extrabold leading-snug text-primary md:text-3xl">
-                <Link to={`/blog/${featured.slug}`} className="hover:text-accent">{featured.title}</Link>
-              </h3>
-              <p className="mt-3 text-muted-foreground">{featured.excerpt}</p>
-
-              {/* Product details */}
-              {featured.products && featured.products.length > 0 && (
-                <div className="mt-6 space-y-3">
-                  <p className="text-xs font-bold uppercase tracking-wider text-accent">Featured products</p>
-                  {featured.products.map((p) => (
-                    <a
-                      key={p.name}
-                      href={withUtm(p.url, "blog-featured", p.name.toLowerCase().replace(/\s+/g, "-"))}
-                      target="_blank"
-                      rel="noopener noreferrer sponsored"
-                      className="flex items-center justify-between gap-3 rounded-xl border border-border bg-secondary/40 px-4 py-3 transition-colors hover:bg-secondary"
-                    >
-                      <div className="flex items-center gap-3">
-                        <img src={logoFor(p.url)} alt="" width={20} height={20} className="h-5 w-5 rounded" />
-                        <span className="text-sm font-semibold text-primary">{p.name}</span>
+        <div
+          className="relative"
+          onMouseEnter={() => setPaused(true)}
+          onMouseLeave={() => setPaused(false)}
+        >
+          {/* Slides stacked; active one fades in */}
+          <div className="relative">
+            {featuredPosts.map((featured, i) => (
+              <div
+                key={featured.slug}
+                className={`transition-opacity duration-700 ease-in-out ${
+                  i === active ? "opacity-100" : "pointer-events-none absolute inset-0 opacity-0"
+                }`}
+                aria-hidden={i !== active}
+              >
+                <Card className="overflow-hidden border-border shadow-elegant">
+                  <div className="grid lg:grid-cols-2">
+                    <Link to={`/blog/${featured.slug}`} className="relative block bg-secondary">
+                      <div className="aspect-[16/9] w-full overflow-hidden lg:h-full lg:aspect-auto">
+                        <img
+                          src={featured.image}
+                          alt={featured.title}
+                          width={1280}
+                          height={720}
+                          loading={i === 0 ? "eager" : "lazy"}
+                          decoding="async"
+                          className="h-full w-full object-cover"
+                        />
                       </div>
-                      <div className="flex items-center gap-3 text-xs">
-                        <span className="font-bold text-foreground">{p.price}</span>
-                        <span className="rounded-full bg-accent/10 px-2 py-0.5 font-bold text-accent">{p.cb}</span>
+                      <span className="absolute left-4 top-4 rounded-full bg-accent px-3 py-1 text-xs font-bold uppercase tracking-wider text-accent-foreground">
+                        {featured.tag}
+                      </span>
+                    </Link>
+                    <CardContent className="flex flex-col justify-center p-8 lg:p-10">
+                      <div className="flex flex-wrap items-center gap-4 text-xs text-muted-foreground">
+                        <span className="inline-flex items-center gap-1"><Calendar className="h-3.5 w-3.5" /> {featured.date}</span>
+                        <span className="inline-flex items-center gap-1"><Clock className="h-3.5 w-3.5" /> {featured.read}</span>
+                        <span className="inline-flex items-center gap-1"><User className="h-3.5 w-3.5" /> {featured.author}</span>
                       </div>
-                    </a>
-                  ))}
-                </div>
-              )}
+                      <h3 className="mt-4 text-2xl font-extrabold leading-snug text-primary md:text-3xl">
+                        <Link to={`/blog/${featured.slug}`} className="hover:text-accent">{featured.title}</Link>
+                      </h3>
+                      <p className="mt-3 text-muted-foreground">{featured.excerpt}</p>
 
-              <Button asChild className="mt-6 w-fit bg-accent-gradient text-accent-foreground hover:opacity-90">
-                <Link to={`/blog/${featured.slug}`}>
-                  Read full article <ArrowRight className="ml-1 h-4 w-4" />
-                </Link>
-              </Button>
-            </CardContent>
+                      {/* Product details */}
+                      {featured.products && featured.products.length > 0 && (
+                        <div className="mt-6 space-y-3">
+                          <p className="text-xs font-bold uppercase tracking-wider text-accent">Featured products</p>
+                          {featured.products.map((p) => (
+                            <a
+                              key={p.name}
+                              href={withUtm(p.url, "blog-featured", p.name.toLowerCase().replace(/\s+/g, "-"))}
+                              target="_blank"
+                              rel="noopener noreferrer sponsored"
+                              className="flex items-center justify-between gap-3 rounded-xl border border-border bg-secondary/40 px-4 py-3 transition-colors hover:bg-secondary"
+                            >
+                              <div className="flex items-center gap-3">
+                                <img src={logoFor(p.url)} alt="" width={20} height={20} className="h-5 w-5 rounded" />
+                                <span className="text-sm font-semibold text-primary">{p.name}</span>
+                              </div>
+                              <div className="flex items-center gap-3 text-xs">
+                                <span className="font-bold text-foreground">{p.price}</span>
+                                <span className="rounded-full bg-accent/10 px-2 py-0.5 font-bold text-accent">{p.cb}</span>
+                              </div>
+                            </a>
+                          ))}
+                        </div>
+                      )}
+
+                      <Button asChild className="mt-6 w-fit bg-accent-gradient text-accent-foreground hover:opacity-90">
+                        <Link to={`/blog/${featured.slug}`}>
+                          Read full article <ArrowRight className="ml-1 h-4 w-4" />
+                        </Link>
+                      </Button>
+                    </CardContent>
+                  </div>
+                </Card>
+              </div>
+            ))}
           </div>
-        </Card>
+
+          {/* Dot indicators */}
+          {count > 1 && (
+            <div className="mt-5 flex items-center justify-center gap-2">
+              {featuredPosts.map((p, i) => (
+                <button
+                  key={p.slug}
+                  type="button"
+                  onClick={() => goTo(i)}
+                  aria-label={`Show featured story ${i + 1}: ${p.title}`}
+                  aria-current={i === active}
+                  className={`h-2.5 rounded-full transition-all duration-300 ${
+                    i === active ? "w-8 bg-accent" : "w-2.5 bg-border hover:bg-accent/50"
+                  }`}
+                />
+              ))}
+            </div>
+          )}
+        </div>
       </section>
 
       {/* ARTICLE GRID */}
