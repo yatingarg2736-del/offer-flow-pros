@@ -52,7 +52,8 @@ export const blogPosts: BlogPost[] = [
     date: "2026-06-20",
     read: "6 min",
     tag: "Fitness",
-    image: health,
+    image: muscleblaze,
+    featured: true,
     content: [],
   },
   {
