@@ -2,6 +2,7 @@ import skincare from "@/assets/blog-skincare.webp";
 import holi from "@/assets/blog-holi.webp";
 import valentine from "@/assets/blog-valentine.webp";
 import streetwear from "@/assets/blog-streetwear.webp";
+import health from "@/assets/blog-health.webp";
 import muscleblaze from "@/assets/blog-muscleblaze.png";
 import wellness from "@/assets/blog-wellness.webp";
 import metgala from "@/assets/metgala/hero.jpeg";
@@ -52,12 +53,11 @@ export const blogPosts: BlogPost[] = [
     date: "2026-06-20",
     read: "6 min",
     tag: "Fitness",
-    image: health,
+    image: muscleblaze,
     featured: true,
     content: [],
   },
   {
-    
     slug: "met-gala-2026-india-took-the-steps",
     title: "Met Gala 2026: India Took the Steps",
     excerpt:
