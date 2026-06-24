@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import { ArrowLeft, Calendar, Clock, User, Shield } from "lucide-react";
 
+
 const trackClick = (creative: string) => {
   const dl = (window as any).dataLayer || [];
   (window as any).dataLayer = dl;
