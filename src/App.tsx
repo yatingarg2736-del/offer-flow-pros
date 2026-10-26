@@ -11,6 +11,11 @@ import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import AmazonSummerSale2026 from "./pages/blogs/AmazonSummerSale2026";
 import MuscleBlazeHealthPlan2026 from "./pages/blogs/MuscleBlazeHealthPlan2026";
+import BrandsIndex from "./pages/BrandsIndex";
+import BrandPage from "./pages/BrandPage";
+import CouponsIndex from "./pages/CouponsIndex";
+import CategoryPage from "./pages/CategoryPage";
+import { brands, categories } from "./data/affiliateData";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import Terms from "./pages/Terms";
 import NotFound from "./pages/NotFound";
@@ -38,6 +43,28 @@ export const routes: RouteRecord[] = [
         path: "blog/:slug",
         Component: BlogPost,
         getStaticPaths: () => blogPosts.map((p) => `/blog/${p.slug}`),
+      },
+      {
+        path: "brands",
+        children: [
+          { index: true, Component: BrandsIndex },
+          {
+            path: ":slug",
+            Component: BrandPage,
+            getStaticPaths: () => brands.map((b) => `/brands/${b.slug}`),
+          },
+        ],
+      },
+      {
+        path: "coupons",
+        children: [
+          { index: true, Component: CouponsIndex },
+          {
+            path: ":category",
+            Component: CategoryPage,
+            getStaticPaths: () => categories.map((c) => `/coupons/${c.slug}`),
+          },
+        ],
       },
       { path: "privacy-policy", Component: PrivacyPolicy },
       { path: "terms", Component: Terms },
