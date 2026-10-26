@@ -7,6 +7,7 @@ interface SEOProps {
   image?: string;
   type?: string;
   jsonLd?: Record<string, unknown> | Record<string, unknown>[];
+  robots?: string;
 }
 
 const SITE_URL = "https://www.couponminty.com";
@@ -19,12 +20,13 @@ const SEO = ({
   image = DEFAULT_IMAGE,
   type = "website",
   jsonLd,
+  robots = "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
 }: SEOProps) => (
   <Helmet>
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
-    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="robots" content={robots} />
     <meta property="og:type" content={type} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
