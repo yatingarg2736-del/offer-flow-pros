@@ -2,7 +2,8 @@ import { Sparkles, Mail, MapPin } from "lucide-react";
 
 const explore = [
   { label: "Stores", href: "#stores" },
-  { label: "Coupons", href: "#coupons" },
+  { label: "Brands", href: "/brands" },
+  { label: "Coupons", href: "/coupons" },
   { label: "Travel Deals", href: "#travel" },
   { label: "How It Works", href: "#how" },
 ];
