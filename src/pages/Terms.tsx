@@ -1,8 +1,16 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
+
+const SITE_URL = "https://www.couponminty.com";
 
 const Terms = () => (
   <>
+    <SEO
+      title="Terms & Conditions | CouponMinty"
+      description="The terms that govern your use of CouponMinty, including coupons, cashback rewards, affiliate partnerships and account usage."
+      canonical={`${SITE_URL}/terms`}
+    />
     <Navbar />
     <div className="bg-background min-h-screen">
       <div className="bg-hero py-16 text-primary-foreground">

@@ -1,8 +1,16 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
+
+const SITE_URL = "https://www.couponminty.com";
 
 const PrivacyPolicy = () => (
   <>
+    <SEO
+      title="Privacy Policy | CouponMinty"
+      description="How CouponMinty collects, uses and protects your personal information, including cookies, cashback data and email subscriptions."
+      canonical={`${SITE_URL}/privacy-policy`}
+    />
     <Navbar />
     <div className="bg-background min-h-screen">
       <div className="bg-hero py-16 text-primary-foreground">
