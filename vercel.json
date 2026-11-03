@@ -1,12 +1,1 @@
-{
-  "cleanUrls": true,
-  "trailingSlash": false,
-  "redirects": [
-    {
-      "source": "/:path(.*)",
-      "has": [{ "type": "host", "value": "couponminty.com" }],
-      "destination": "https://www.couponminty.com/:path",
-      "permanent": true
-    }
-  ]
-}
+{"cleanUrls": true, "trailingSlash": false, "redirects": [{"source": "/:path(.*)", "has": [{"type": "host", "value": "couponminty.com"}], "destination": "https://www.couponminty.com/:path", "permanent": true}], "rewrites": [{"source": "/:path(.*)", "destination": "/index.html"}]}
