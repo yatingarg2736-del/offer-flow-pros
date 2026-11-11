@@ -1,6 +1,5 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import Stats from "@/components/Stats";
 import Stores from "@/components/Stores";
 import Coupons from "@/components/Coupons";
 import Travel from "@/components/Travel";
@@ -69,7 +68,7 @@ const jsonLd = [
         name: "Which brands are partnered with CouponMinty?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "CouponMinty partners with 1,500+ brands including Amazon, Flipkart, Myntra, Ajio, Nykaa, Swiggy, Zomato, Croma, Reliance Digital, BigBasket and many more.",
+          text: "CouponMinty features offers across brands including Amazon, Flipkart, Myntra, Ajio, Nykaa, Swiggy, Zomato, Croma, Reliance Digital, BigBasket and many more.",
         },
       },
     ],
@@ -79,15 +78,14 @@ const Index = () => {
   return (
     <main className="min-h-screen bg-background">
       <SEO
-        title="CouponMinty: Coupons, Cashback & Deals from 1,500+ Top Brands in India"
-        description="Save more with CouponMinty. Get verified coupons, extra cashback and exclusive offers from Amazon, Flipkart, Myntra, Swiggy, Nykaa, Croma and 1,500+ top brands."
+        title="CouponMinty: Coupons, Cashback & Deals from Top Brands in India"
+        description="Save more with CouponMinty. Find coupons, cashback and exclusive offers from Amazon, Flipkart, Myntra, Swiggy, Nykaa, Croma and more."
         canonical={SITE_URL}
         jsonLd={jsonLd}
       />
       <Navbar />
       <h1 className="sr-only">CouponMinty: Coupons, Cashback & Travel Deals from Top Brands in India</h1>
       <Hero />
-      <Stats />
       <Stores />
       <Coupons />
       <Travel />

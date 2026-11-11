@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, BadgeCheck, Search, Tag, Store as StoreIcon, X } from "lucide-react";
+import { ArrowRight, Search, Tag, Store as StoreIcon, X } from "lucide-react";
 import hero from "@/assets/hero.webp";
 import { stores, coupons, logoFor } from "@/lib/dealsData";
 import { withUtm } from "@/lib/affiliate";
@@ -57,14 +57,11 @@ const Hero = () => {
       <div className="absolute inset-0 bg-radial-glow" />
       <div className="container relative grid gap-12 py-20 lg:grid-cols-2 lg:py-28">
         <div className="flex flex-col justify-center">
-          <span className="inline-flex w-fit items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider backdrop-blur">
-            <BadgeCheck className="h-4 w-4 text-accent" /> Trusted by 25M+ shoppers
-          </span>
           <h1 className="mt-6 text-balance text-4xl font-extrabold leading-[1.05] sm:text-5xl lg:text-6xl">
             Extra Cashback on top of <span className="text-accent">every coupon</span> you use.
           </h1>
           <p className="mt-5 max-w-xl text-lg text-white/75">
-            CouponMinty partners with 1,500+ leading brands across shopping, travel, fashion and food, so you save more on every single order.
+            Discover offers across shopping, travel, fashion and food, and save more on every order.
           </p>
 
           <form onSubmit={submit} ref={wrapRef} className="relative mt-8 max-w-xl">
