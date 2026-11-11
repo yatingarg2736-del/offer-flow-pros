@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import BrandLogo from "@/components/BrandLogo";
 import { brands, categories } from "@/data/affiliateData";
 
-const featuredBrandSlugs = [
+export const featuredBrandSlugs = [
   "global-delight",
   "economy-bookings",
   "the-unity-soft",
