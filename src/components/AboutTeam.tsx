@@ -1,12 +1,4 @@
 import team from "@/assets/team.webp";
-import { Users, Briefcase, Globe2, Award } from "lucide-react";
-
-const points = [
-  { icon: Users, label: "200+ team members" },
-  { icon: Briefcase, label: "12 offices across India" },
-  { icon: Globe2, label: "Partners in 14 countries" },
-  { icon: Award, label: "Awarded 'Best Affiliate 2024'" },
-];
 
 const AboutTeam = () => (
   <section id="about" className="container py-20">
@@ -25,23 +17,10 @@ const AboutTeam = () => (
       </div>
       <div>
         <span className="text-xs font-bold uppercase tracking-widest text-accent">About CouponMinty</span>
-        <h2 className="mt-3 text-3xl font-extrabold text-primary md:text-4xl">A passionate team building India&apos;s largest savings network</h2>
+        <h2 className="mt-3 text-3xl font-extrabold text-primary md:text-4xl">A passionate team making online savings easier</h2>
         <p className="mt-4 text-muted-foreground">
-          Founded in 2017 and headquartered in Gurugram, CouponMinty is a trusted partner to 1,500+ merchants and serves over 25 million members across India. Our mission is simple: make every online purchase more rewarding with verified coupons and guaranteed cashback, so families save real money on the things they already buy.
+          CouponMinty brings shoppers and brands together with a simple goal: make online purchases more rewarding with helpful offers and verified coupons.
         </p>
-        <p className="mt-3 text-muted-foreground">
-          Our 200+ specialists across technology, brand partnerships and customer success work round-the-clock to track new deals, validate coupon codes and process cashback payouts within hours, not weeks.
-        </p>
-        <div className="mt-8 grid gap-4 sm:grid-cols-2">
-          {points.map((p) => (
-            <div key={p.label} className="flex items-center gap-3 rounded-xl border border-border bg-card p-4 shadow-card">
-              <span className="grid h-10 w-10 place-items-center rounded-lg bg-accent-gradient text-accent-foreground">
-                <p.icon className="h-5 w-5" />
-              </span>
-              <span className="font-semibold text-primary">{p.label}</span>
-            </div>
-          ))}
-        </div>
       </div>
     </div>
   </section>

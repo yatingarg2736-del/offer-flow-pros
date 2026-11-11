@@ -62,7 +62,7 @@ const Partners = () => (
     <div className="container mb-10 text-center">
       <span className="text-xs font-bold uppercase tracking-widest text-accent">Official Partnerships</span>
       <h2 id="partners-heading" className="mt-3 text-3xl font-extrabold text-primary md:text-4xl">In partnership with global MNCs</h2>
-      <p className="mx-auto mt-3 max-w-2xl text-muted-foreground">A 200+ strong team working with top brands across e-commerce, travel and lifestyle to bring you the best deals.</p>
+      <p className="mx-auto mt-3 max-w-2xl text-muted-foreground">We work with top brands across e-commerce, travel and lifestyle to bring you great deals.</p>
     </div>
     <div className="space-y-4">
       <Row />

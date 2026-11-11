@@ -1,6 +1,5 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import Stats from "@/components/Stats";
 import Stores from "@/components/Stores";
 import Coupons from "@/components/Coupons";
 import Travel from "@/components/Travel";
@@ -87,7 +86,6 @@ const Index = () => {
       <Navbar />
       <h1 className="sr-only">CouponMinty: Coupons, Cashback & Travel Deals from Top Brands in India</h1>
       <Hero />
-      <Stats />
       <Stores />
       <Coupons />
       <Travel />

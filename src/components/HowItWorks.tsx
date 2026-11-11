@@ -1,7 +1,7 @@
 import { Search, MousePointerClick, ShoppingCart, Wallet } from "lucide-react";
 
 const steps = [
-  { icon: Search, title: "Search a Deal", desc: "Find your favourite brand or coupon from 1,500+ partner stores in seconds." },
+  { icon: Search, title: "Search a Deal", desc: "Find your favourite brand or coupon in seconds." },
   { icon: MousePointerClick, title: "Click the Link", desc: "Copy the coupon and click through to the brand site via CouponMinty." },
   { icon: ShoppingCart, title: "Shop Online", desc: "Complete your purchase normally on the brand website at the best price." },
   { icon: Wallet, title: "Get Cashback", desc: "Cashback tracks within hours and is paid directly to your bank or UPI." },
