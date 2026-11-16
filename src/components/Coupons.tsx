@@ -19,6 +19,8 @@ const Coupons = () => {
     }
   };
 
+  if (coupons.length === 0) return null;
+
   return (
     <section id="coupons" aria-labelledby="coupons-heading" className="bg-secondary/40 py-20">
       <div className="container">

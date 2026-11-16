@@ -19,7 +19,7 @@ const BrandsIndex = () => {
     <main className="min-h-screen bg-background">
       <SEO
         title="All Brands A–Z | CouponMinty"
-        description="Browse every brand on CouponMinty from A to Z. Find coupon codes, offers and deals for hundreds of stores across travel, fashion, electronics, home and more."
+        description="Browse every brand on CouponMinty from A to Z and explore offers across travel, fashion, electronics, home and more."
         canonical="https://www.couponminty.com/brands"
       />
       <Navbar />
@@ -28,7 +28,7 @@ const BrandsIndex = () => {
         <div className="container py-12 lg:py-16">
           <h1 className="text-3xl font-extrabold text-primary md:text-4xl lg:text-5xl">All brands A–Z</h1>
           <p className="mt-3 max-w-2xl text-muted-foreground">
-            {brands.length} brands with coupon codes, offers and deals. Pick a brand to see its active codes.
+            Browse {brands.length} brands and open a brand page to see available details.
           </p>
           <nav aria-label="Jump to letter" className="mt-6 flex flex-wrap gap-1.5">
             {letters.map((letter) => (
@@ -64,7 +64,7 @@ const BrandsIndex = () => {
                     <BrandLogo name={brand.name} logo={brand.logo} />
                     <span className="min-w-0">
                       <span className="block truncate text-sm font-bold text-foreground">{brand.name}</span>
-                      <span className="text-xs text-muted-foreground">View coupons</span>
+                      <span className="text-xs text-muted-foreground">View brand</span>
                     </span>
                   </Link>
                 ))}

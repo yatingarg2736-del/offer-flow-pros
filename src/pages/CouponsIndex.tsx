@@ -18,7 +18,7 @@ const CouponsIndex = () => {
     <main className="min-h-screen bg-background">
       <SEO
         title="Coupon Codes by Category | CouponMinty"
-        description="All CouponMinty coupon codes grouped by category — travel, fashion, beauty, electronics, home, food and more. Copy a code and save instantly."
+        description="Browse current CouponMinty coupon code listings by category."
         canonical={`${SITE_URL}/coupons`}
       />
       <Navbar />
@@ -27,9 +27,11 @@ const CouponsIndex = () => {
         <div className="container py-12 lg:py-16">
           <h1 className="text-3xl font-extrabold text-primary md:text-4xl lg:text-5xl">Coupon codes by category</h1>
           <p className="mt-3 max-w-2xl text-muted-foreground">
-            {coupons.length} verified codes across {groups.length} categories. Jump to a category to grab a code.
+            {coupons.length > 0
+              ? `${coupons.length} coupon codes across ${groups.length} categories. Jump to a category to browse.`
+              : "No coupon codes are currently listed."}
           </p>
-          <nav aria-label="Jump to category" className="mt-6 flex flex-wrap gap-2">
+          {groups.length > 0 && <nav aria-label="Jump to category" className="mt-6 flex flex-wrap gap-2">
             {groups.map(({ cat, items }) => (
               <a
                 key={cat.slug}
@@ -39,11 +41,11 @@ const CouponsIndex = () => {
                 {cat.name} <span className="text-xs font-bold text-muted-foreground">({items.length})</span>
               </a>
             ))}
-          </nav>
+          </nav>}
         </div>
       </section>
 
-      <section className="container space-y-12 py-12">
+      {groups.length > 0 && <section className="container space-y-12 py-12">
         {groups.map(({ cat, items }) => (
           <div key={cat.slug} id={cat.slug} className="scroll-mt-24">
             <div className="flex flex-wrap items-center justify-between gap-3">
@@ -75,7 +77,7 @@ const CouponsIndex = () => {
             </div>
           </div>
         ))}
-      </section>
+      </section>}
 
       <Footer />
     </main>
